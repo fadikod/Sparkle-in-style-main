@@ -1,14 +1,14 @@
 import React from "react";
 import { TeamMember } from "../types";
 
-import founderImage from "../assets/team/founder.jpeg"; // <-- put woman in red here
-import womanBlack from "../assets/team/emp1.jpg";      // woman in black
+import founderImage from "../assets/team/founder.jpeg";
+import womanBlack from "../assets/team/emp1.jpg";
 
 const teamData: TeamMember[] = [
   {
     id: "t1",
-    name: "Employee Name", // <-- replace with her real name
-    role: "Makeup Artist", // <-- adjust role
+    name: "Employee Name", // TODO
+    role: "Makeup Artist",
     specialties: ["Glam Makeup", "Bridal Looks", "Braids & Styling"],
     imageUrl: womanBlack,
   },
@@ -32,42 +32,46 @@ const teamData: TeamMember[] = [
 
 const Team: React.FC = () => {
   return (
-    <section id="team" className="relative section-shell">
-      {/* soft decorative glow */}
-      <div className="pointer-events-none absolute -top-10 -left-16 h-40 w-40 rounded-full bg-gold-500/6 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-52 w-52 rounded-full bg-gold-500/5 blur-3xl" />
+    <section
+      id="team"
+      className="relative pt-24 md:pt-28 py-10 md:py-12 overflow-hidden scroll-mt-24 md:scroll-mt-28"
+    >
+      {/* soft glow */}
+      <div className="absolute -top-24 right-0 h-72 w-72 bg-gold-500/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-72 w-72 bg-gold-500/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
-      <div className="section-inner relative z-10">
-        {/* Page Header */}
-        <div className="mb-10 max-w-2xl">
-          <span className="section-eyebrow">Our People</span>
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <span className="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">
+            Our People
+          </span>
 
-          <h1 className="section-title font-display">
+          <h1 className="font-display text-4xl md:text-5xl text-neutral-900 mt-3 mb-3">
             Meet the{" "}
             <span className="italic font-serif text-gold-600">Team</span>
           </h1>
 
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-4" />
+          <div className="h-px w-20 mx-auto bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
 
-          <p className="section-body">
-            The professionals behind Sparkle in Style — selected for skill,
-            standards, and real results.
+          <p className="mt-4 max-w-2xl mx-auto text-sm text-neutral-600 leading-relaxed">
+            The professionals behind Sparkle in Style — curated for quality,
+            discipline, and real results.
           </p>
         </div>
 
-        {/* Founder Section (image LEFT) */}
-        <div className="mb-14">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div>
-              <img
-                src={founderImage}
-                alt="Founder of Sparkle in Style"
-                className="w-full max-w-md mx-auto lg:mx-0 rounded-3xl object-cover aspect-[4/5] shadow-sm"
-              />
-            </div>
+        {/* Founder Feature Strip */}
+        <div className="mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <img
+              src={founderImage}
+              alt="Founder of Sparkle in Style"
+              loading="lazy"
+              className="w-full h-[420px] object-cover rounded-3xl shadow-sm"
+            />
 
             <div className="max-w-xl">
-              <p className="text-xs uppercase tracking-[0.25em] text-gold-600 mb-4">
+              <p className="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase mb-3">
                 Founder
               </p>
 
@@ -80,81 +84,75 @@ const Team: React.FC = () => {
               </p>
 
               <p className="text-neutral-600 leading-relaxed mb-4">
-                Sparkle in Style was created with a clear vision: to build a
-                space where beauty education and professional standards come
-                together without compromise.
+                Sparkle in Style was created with a clear vision: to build a space
+                where beauty education and professional standards come together
+                without compromise.
               </p>
 
               <p className="text-neutral-600 leading-relaxed">
-                Every artist and mentor within the academy is selected not only
-                for technical skill, but for professionalism, discipline, and
-                the ability to guide others with confidence and care.
+                Every artist and mentor is selected not only for technical skill,
+                but for professionalism, discipline, and the ability to guide
+                others with confidence and care.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Small philosophy divider */}
-        <div className="mb-10 max-w-3xl">
-          <p className="text-neutral-600 leading-relaxed">
-            We keep the team intentionally curated — so every client and student
-            receives consistent quality, care, and results.
-          </p>
-        </div>
+        {/* Team Intro */}
+        <div className="text-center mb-8">
+          <span className="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">
+            The Experts
+          </span>
 
-        {/* Team Grid */}
-        <div className="mb-6 max-w-2xl">
-          <span className="section-eyebrow">The Experts</span>
-
-          <h2 className="section-title font-display">
+          <h2 className="font-display text-3xl md:text-4xl text-neutral-900 mt-3 mb-3">
             Mentors{" "}
             <span className="italic font-serif text-gold-600">&amp; Artists</span>
           </h2>
 
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-4" />
-
-          <p className="section-body">
-            Experienced professionals from the beauty industry — practical,
-            involved, and focused on real salon results.
-          </p>
+          <div className="h-px w-20 mx-auto bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
         </div>
 
-        <div className="card-grid-3">
+        {/* Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {teamData.map((member) => (
             <article
               key={member.id}
-              className="group card-soft-tight overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-500"
+              className="bg-white/90 rounded-3xl p-6 shadow-sm border border-neutral-100 hover:shadow-lg transition-all duration-300"
             >
-              <div className="relative overflow-hidden aspect-[3/4]">
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="relative overflow-hidden rounded-2xl mb-5">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                  className="w-full h-60 object-cover transition-transform duration-500 hover:scale-[1.03]"
                 />
               </div>
 
-              <div className="pt-3 pb-4 px-3 md:px-4">
-                <h3 className="font-display text-lg md:text-xl text-neutral-900 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-gold-600 font-medium text-[11px] tracking-[0.18em] uppercase mb-3">
-                  {member.role}
-                </p>
+              <h3 className="font-display text-lg text-neutral-900">
+                {member.name}
+              </h3>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {member.specialties.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 border border-neutral-200/70 rounded-full text-[10px] uppercase tracking-[0.16em] text-neutral-500 bg-luxury-cream/60"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <p className="text-xs uppercase tracking-[0.18em] text-gold-600 mt-1">
+                {member.role}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {member.specialties.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 border border-neutral-200/70 rounded-full text-[10px] uppercase tracking-[0.16em] text-neutral-600 bg-gold-50/50"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Closing line */}
+        <div className="text-center mt-6 text-neutral-500 text-xs uppercase tracking-widest">
+          Curated team • consistent quality • luxury standards
         </div>
       </div>
     </section>
