@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;:root{--bg-main: #fbf7f1;--bg-section: #fffaf3;--bg-section-alt: #f3ebdf;--text-main: #1f1b16;--text-muted: #6f6257;--accent-gold: #b08d57;--border-soft: rgba(176, 141, 87, .25)}html{scroll-behavior:smooth}body{background-color:var(--bg-main);color:var(--text-main)}

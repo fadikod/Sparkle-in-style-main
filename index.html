@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparkle in Style | Luxury Academy & Salon</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind theme extension (colors, fonts, animations) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                100: "#F9F1D8",
+                200: "#F0E3B1",
+                300: "#E6D48A",
+                400: "#DCC663",
+                500: "#C9A24A", // Soft luxury gold
+                600: "#AA8C2C",
+                700: "#806921",
+                800: "#554616",
+                900: "#2B230B",
+              },
+              neutral: {
+                50: "#FCFAF7",
+                100: "#F4EFE8",
+                850: "#2A2A2E",
+                900: "#1E1D21",
+              },
+luxury: {
+  base: "#FCFAF7",   // site base (matches neutral-50)
+  warm: "#F4EFE8",   // soft warm (matches neutral-100)
+  blush: "#F7EFE7",  // elegant light blush (good for gallery)
+  cream: "#F9E7EA",  // rosy (use sparingly)
+  sand: "#F4E2D3",   // warm sand (great for About)
+},
+
+              sparkle: {
+                pink: "#F6D4E0",
+                nude: "#F3E3D3",
+                grey: "#8F8C8A",
+              },
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', "serif"],
+              display: ['"Playfair Display"', "serif"],
+              sans: ['"Montserrat"', "sans-serif"],
+            },
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-out forwards",
+              "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+              shimmer: "shimmer 3s linear infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-1000px 0" },
+                "100%": { backgroundPosition: "1000px 0" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Global custom CSS -->
+    <style>
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #FCFAF7; /* match neutral-50 */
+  color: #121212;
+}
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .font-display {
+        font-family: "Playfair Display", serif;
+      }
+
+      .gold-text-gradient {
+        background: linear-gradient(to right, #aa8c2c, #d4af37, #aa8c2c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shine 4s linear infinite;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(201, 162, 74, 0.2);
+      }
+
+      /* ---------- GLOBAL LAYOUT HELPERS (smaller, tighter) ---------- */
+
+      /* Section vertical padding (smaller than default py-16/24) */
+      .section-shell {
+        padding-top: 2.5rem; /* 40px */
+        padding-bottom: 2.5rem;
+      }
+      @media (min-width: 768px) {
+        .section-shell {
+          padding-top: 3.5rem; /* 56px */
+          padding-bottom: 3.5rem;
+        }
+      }
+
+      /* Centered content width */
+      .section-inner {
+        max-width: 72rem; /* 1152px (similar to max-w-6xl) */
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem; /* 16px */
+        padding-right: 1rem;
+      }
+
+      /* Eyebrow label (UPPERCASE small text above titles) */
+      .section-eyebrow {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: #aa8c2c; /* gold-600 */
+        margin-bottom: 0.5rem;
+      }
+
+      /* Section main title */
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.875rem; /* text-3xl */
+        line-height: 1.2;
+        color: #1e1d21; /* neutral-900 */
+        margin-bottom: 1rem;
+      }
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 2.25rem; /* text-4xl */
+        }
+      }
+
+      /* Section body text */
+      .section-body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #5f5a55; /* soft neutral */
+      }
+
+      /* Cards: smaller + tighter */
+      .card-soft {
+        border-radius: 0.75rem; /* rounded-xl */
+        background-color: #ffffff;
+        border: 1px solid #f3f0ea;
+        padding: 1rem; /* p-4 */
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+      }
+
+      .card-soft-tight {
+        border-radius: 0.75rem;
+        background-color: #ffffff;
+        border: 1px solid #f3f0ea;
+        padding: 0.75rem 1rem; /* a bit tighter */
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+      }
+
+      /* 3-column grid with smaller gap */
+      .card-grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem; /* ~gap-4 */
+      }
+      @media (min-width: 768px) {
+        .card-grid-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/Sparkle-in-style-main/assets/index-Bvql2Gcx.js"></script>
+    <link rel="stylesheet" crossorigin href="/Sparkle-in-style-main/assets/index-CSp8qeCw.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
