@@ -1,7 +1,7 @@
 {
   "nav": {
     "services": "Services",
-    "academy": "Academy",
+    "academy": "Academy / Salon",
     "team": "Team",
     "about": "About",
     "podcast": "Podcast",
@@ -27,8 +27,8 @@
   },
   "hero": {
     "breadcrumb": "The Hague • Beauty Academy & Beauty Salon",
-    "titleLine1": "Beauty Academy",
-    "titleLine2": "& Beauty Salon",
+    "titleLine1": "Beauty & Styling",
+    "titleLine2": " education with a future",
     "description": "Work in a real salon environment with clients, colours, and trends. Sparkle in Style combines a professional Beauty Academy with a modern Beauty Salon — giving you hands-on experience from day one.",
     "ctaPrograms": "View Programs",
     "ctaIntake": "Book an Intake",
@@ -45,26 +45,88 @@
   "buttons": {
     "viewFullSalonMenu": "View Full Salon Menu"
   },
-  "services": {
-    "titlePrefix": "Our",
-    "titleEmphasis": "Expertise",
-    "tabs": {
-      "salon": "Salon Services",
-      "academy": "Academy Programs"
-    },
-    "academy": {
-      "ariaPrev": "Previous academy programs",
-      "ariaNext": "Next academy programs",
-      "enroll": "Enroll Now",
-      "durationPrefix": ""
-    },
-    "salonCategories": {
-      "hair": "Hair",
-      "nails": "Nails",
-      "makeup": "Makeup"
-    },
-    "salonMenuSuffix": "Menu"
+"services": {
+  "titlePrefix": "Our",
+  "titleEmphasis": "Expertise",
+
+  "tabs": {
+    "salon": "Salon Services",
+    "academy": "Academy Programs"
   },
+
+  "academy": {
+    "ariaPrev": "Previous academy programs",
+    "ariaNext": "Next academy programs",
+    "enroll": "Enroll Now",
+    "durationPrefix": "",
+
+    "makeup": {
+      "title": "Make-up & Beauty Styling",
+      "desc": "From essential techniques to editorial looks, including a professional portfolio day."
+    },
+    "hair": {
+      "title": "Hair & Styling",
+      "desc": "Cutting, blow-drying, and updos, plus salon etiquette and client consultation."
+    },
+    "nails": {
+      "title": "Nail Styling",
+      "desc": "Gel polish, acrylics, and nail care with complete hygiene protocol training."
+    },
+    "lash": {
+      "title": "Lash & Brow Styling",
+      "desc": "Brow shaping, tinting, lamination, and lash lifting to create long-lasting, defined looks."
+    },
+    "fashion": {
+      "title": "Fashion Styling",
+      "desc": "Wardrobe curation, color theory, and styling for shoots, events, and personal branding."
+    },
+    "business": {
+      "title": "Beauty Business & Entrepreneurship",
+      "desc": "Build your own brand: pricing, client communication, social media, and beauty business basics."
+    }
+  },
+
+  "salonCategories": {
+    "hair": "Hair",
+    "nails": "Nail Treatments",
+    "makeup": "Makeup"
+  },
+
+  "salonMenuSuffix": "Menu",
+
+  "salon": {
+    "hair": {
+      "signature": {
+        "title": "Signature Cut & Style",
+        "desc": "Precision cutting tailored to your face shape with a luxury blowout."
+      },
+      "balayage": {
+        "title": "Balayage & Gloss",
+        "desc": "Hand-painted highlights for a natural, sun-kissed dimension."
+      }
+    },
+    "nails": {
+      "manicure": {
+        "title": "Gel Couture Manicure",
+        "desc": "Detailed cuticle care, shaping, and long-lasting gel polish."
+      },
+      "pedicure": {
+        "title": "Luxury Pedicure",
+        "desc": "Exfoliating scrub, mask, hot stone massage, and polish."
+      }
+    },
+    "makeup": {
+      "event": {
+        "title": "Event Makeup",
+        "desc": "Long-wearing HD makeup for special occasions."
+      },
+      "bridal": {
+        "title": "Bridal Package",
+        "desc": "Trial session plus wedding day application."
+      }
+    }
+  }
+},
   "brochure": {
     "title": "Full Salon Menu",
     "subtitle": "Transparent pricing. Tailored experience.",
@@ -170,27 +232,28 @@
     "podcastCta": "Listen to the Podcast"
   },
   
-  "about": {
-    "kicker": "About Sparkle in Style",
-    "titleLine1": "More than a Salon.",
-    "titleLine2Prefix": "A",
-    "titleLine2Emphasis": "Training Company",
-    "paragraph1": {
-      "prefix": "At ",
-      "brand": "Sparkle in Style",
-      "suffix": ", we educate talent for a future in beauty & styling. As a recognized training company (leerbedrijf), we combine theory with extensive practice — in small groups and with personal guidance, in a real salon environment."
-    },
-    "spaceLabel": "Our space:",
-    "spaceText": "calm, professional, and designed for both education and client experience.",
-    "highlights": [
-      "Experienced Instructors",
-      "Practice-Oriented",
-      "Internship & Portfolio",
-      "Inclusive Community"
-    ],
-    "cta": "Learn about our mission",
-    "imageAlt": "Sparkle in Style interior"
+"about": {
+  "kicker": "About Sparkle in Style",
+  "titleLine1": "More than a Salon.",
+  "titleLine2Prefix": "A",
+  "titleLine2Emphasis": "Training Company",
+  "paragraph1": {
+    "prefix": "",
+    "brand": "",
+    "suffix": "Sparkle in Style is a certified learning company that provides high-quality, vocational training and social coaching for young people and adults. We offer people from vulnerable groups the opportunity to learn a profession in personal care and beauty. Students develop employability skills and work on their personal growth, and we also provide support as a safety net for secondary-school drop-outs. Alongside learning the profession, students receive intensive one-to-one guidance to build work skills, become more confident and self-reliant, and take steps towards participation in the labour market and society."
   },
+  "spaceLabel": "Our space:",
+  "spaceText": "calm, professional, and designed for both education and client experience.",
+  "highlights": [
+    "Experienced Instructors",
+    "Practice-Oriented",
+    "Internship & Portfolio",
+    "Inclusive Community"
+  ],
+  "cta": "Learn about our mission",
+  "imageAlt": "Sparkle in Style interior"
+}
+,
   
   "contact": {
     "titlePrefix": "Get in",
@@ -248,6 +311,7 @@
       "submit": "Submit Request"
     }
   }
+  
 
 
 

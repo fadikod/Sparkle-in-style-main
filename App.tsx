@@ -32,12 +32,11 @@ const App: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Hash scroll support: /#services, /#academy, /#about, /#contact...
+  // Hash scroll support: /#services, /#academy, /#about, /#contact...
   useEffect(() => {
     if (!location.hash) return;
 
     const id = location.hash.replace("#", "");
-
     const t = window.setTimeout(() => {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -57,34 +56,42 @@ const App: React.FC = () => {
           element={
             <main>
               {/* HERO */}
-              <section>
+              <section id="hero">
                 <Hero />
               </section>
 
-              {/* SERVICES */}
-              <section className="bg-luxury-base">
+              {/* SERVICES – spacing controlled inside Services.tsx */}
+              <section id="services" className="bg-luxury-base">
+                <Services onOpenBrochure={openBrochure} />
+              </section>
+
+              {/* ACADEMY (placeholder) */}
+              <section id="academy" className="bg-luxury-base">
                 <div className="section-shell">
-                  {/* ✅ Pass opener so the Services button can open the modal */}
-                  <Services onOpenBrochure={openBrochure} />
+                  {/* Future Academy content */}
                 </div>
               </section>
 
-              {/* TESTIMONIALS */}
+              {/* TESTIMONIALS – spacing controlled inside Testimonials.tsx */}
               <section className="bg-luxury-warm border-y border-neutral-200/60">
-                <div className="section-shell">
-                  <Testimonials />
-                </div>
+                <Testimonials />
               </section>
 
               {/* ABOUT */}
-              <section className="bg-luxury-sand border-y border-neutral-200/40">
+              <section
+                id="about"
+                className="bg-luxury-sand border-y border-neutral-200/40"
+              >
                 <div className="section-shell">
                   <About />
                 </div>
               </section>
 
               {/* CONTACT */}
-              <section className="bg-luxury-base border-y border-neutral-200/60">
+              <section
+                id="contact"
+                className="bg-luxury-base border-y border-neutral-200/60"
+              >
                 <div className="section-shell">
                   <Contact />
                 </div>
@@ -102,7 +109,7 @@ const App: React.FC = () => {
 
       <Footer />
 
-      {/* ✅ Modal lives once at app level */}
+      {/* Modal */}
       <BrochureModal isOpen={isModalOpen} onClose={closeBrochure} />
 
       {/* Floating Brochure Button */}

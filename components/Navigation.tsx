@@ -23,17 +23,31 @@ const Navigation: React.FC = () => {
     i18n.changeLanguage(lng);
   };
 
+const goToServices = (tab: "salon" | "academy") => {
+  setOpen(false);
+
+  if (location.pathname === "/") {
+    const el = document.getElementById("services");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.dispatchEvent(new CustomEvent("services-tab", { detail: tab }));
+    }
+    return;
+  }
+
+  navigate(`/#services?tab=${tab}`);
+};
+
+
   const goToSection = (id: string) => {
     setOpen(false);
 
-    // If we're already on home, scroll instantly
     if (location.pathname === "/") {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
 
-    // Otherwise go home with hash (App.tsx will handle scrolling)
     navigate(`/#${id}`);
   };
 
@@ -45,8 +59,6 @@ const Navigation: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-50/70 backdrop-blur-md border-b border-neutral-200/40">
-      {/* ✅ 3-column layout: left logo, center links, right actions
-          Fixes overlap when Dutch CTA is longer */}
       <nav className="mx-auto flex max-w-6xl items-center px-4 py-2">
         {/* LEFT — Logo */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
@@ -65,23 +77,15 @@ const Navigation: React.FC = () => {
           </div>
         </Link>
 
-        {/* CENTER — Desktop links (no absolute centering anymore) */}
+        {/* CENTER — Desktop links */}
         <div className="hidden md:flex flex-1 justify-center px-6">
           <ul className="flex items-center gap-7 text-sm font-medium text-neutral-700">
-            <li>
-              <button
-                type="button"
-                onClick={() => goToSection("services")}
-                className={navLinkClass}
-              >
-                {t("nav.services")}
-              </button>
-            </li>
+
 
             <li>
               <button
                 type="button"
-                onClick={() => goToSection("academy")}
+                onClick={() => goToServices("academy")}
                 className={navLinkClass}
               >
                 {t("nav.academy")}
@@ -122,9 +126,8 @@ const Navigation: React.FC = () => {
           </ul>
         </div>
 
-        {/* RIGHT — Desktop actions (CTA then language, aligned to the far right) */}
+        {/* RIGHT — Desktop actions */}
         <div className="ml-auto hidden md:flex items-center gap-3 justify-end shrink-0">
-          {/* CTA */}
           <button
             type="button"
             onClick={goToEvents}
@@ -133,7 +136,6 @@ const Navigation: React.FC = () => {
             {t("nav.upcomingEvents")}
           </button>
 
-          {/* Language toggle (fixed widths so it doesn't “jump”) */}
           <div className="inline-flex items-center rounded-full border border-neutral-200 bg-white/70 backdrop-blur p-1 shrink-0">
             <button
               type="button"
@@ -178,7 +180,6 @@ const Navigation: React.FC = () => {
       {open && (
         <div className="md:hidden bg-neutral-50/95 backdrop-blur-lg border-t border-neutral-200">
           <div className="px-6 pt-4">
-            {/* Mobile language toggle (also fixed widths) */}
             <div className="inline-flex items-center rounded-full border border-neutral-200 bg-white/70 backdrop-blur p-1">
               <button
                 type="button"
@@ -209,20 +210,12 @@ const Navigation: React.FC = () => {
           </div>
 
           <ul className="flex flex-col gap-4 px-6 py-6 text-sm text-neutral-700">
-            <li>
-              <button
-                type="button"
-                onClick={() => goToSection("services")}
-                className="text-left hover:text-gold-500 transition"
-              >
-                {t("nav.services")}
-              </button>
-            </li>
+
 
             <li>
               <button
                 type="button"
-                onClick={() => goToSection("academy")}
+                onClick={() => goToServices("academy")}
                 className="text-left hover:text-gold-500 transition"
               >
                 {t("nav.academy")}

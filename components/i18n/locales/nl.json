@@ -1,7 +1,7 @@
 {
   "nav": {
     "services": "Diensten",
-    "academy": "Academy",
+    "academy": "Academy / Salon",
     "team": "Team",
     "about": "Over ons",
     "podcast": "Podcast",
@@ -25,11 +25,10 @@
     "contactTitle": "Contact",
     "copyright": "© 2025 Sparkle in Style. Alle rechten voorbehouden."
   },
-  
   "hero": {
     "breadcrumb": "Den Haag • Beauty Academy & Beauty Salon",
-    "titleLine1": "Beauty Academy",
-    "titleLine2": "& Beauty Salon",
+    "titleLine1": "Beauty & Styling",
+    "titleLine2": "opleiding met een toekomst",
     "description": "Werk in een echte salonomgeving met klanten, kleuren en trends. Sparkle in Style combineert een professionele Beauty Academy met een moderne Beauty Salon — zodat je vanaf dag één praktijkervaring opdoet.",
     "ctaPrograms": "Bekijk opleidingen",
     "ctaIntake": "Intake inplannen",
@@ -46,27 +45,88 @@
   "buttons": {
     "viewFullSalonMenu": "Bekijk de volledige salon menukaart"
   },
-  "services": {
-    "titlePrefix": "Onze",
-    "titleEmphasis": "Expertise",
-    "tabs": {
-      "salon": "Salon diensten",
-      "academy": "Academy opleidingen"
-    },
-    "academy": {
-      "ariaPrev": "Vorige opleidingen",
-      "ariaNext": "Volgende opleidingen",
-      "enroll": "Inschrijven",
-      "durationPrefix": ""
-    },
-    "salonCategories": {
-      "hair": "Haar",
-      "nails": "Nagels",
-      "makeup": "Make-up"
-    },
-    "salonMenuSuffix": "menu"
+"services": {
+  "titlePrefix": "Onze",
+  "titleEmphasis": "Expertise",
+
+  "tabs": {
+    "salon": "Salon Diensten",
+    "academy": "Academy Opleidingen"
   },
-  
+
+  "academy": {
+    "ariaPrev": "Vorige opleidingen",
+    "ariaNext": "Volgende opleidingen",
+    "enroll": "Nu inschrijven",
+    "durationPrefix": "",
+
+    "makeup": {
+      "title": "Make-up & Beauty Styling",
+      "desc": "Van basistechnieken tot editorial looks, inclusief een professionele portfoliodag."
+    },
+    "hair": {
+      "title": "Hair & Styling",
+      "desc": "Knippen, föhnen en opsteken, inclusief salonetiquette en klantconsultatie."
+    },
+    "nails": {
+      "title": "Nail Styling",
+      "desc": "Gellak, acryl en nagelverzorging met volledige hygiënetraining."
+    },
+    "lash": {
+      "title": "Lash & Brow Styling",
+      "desc": "Wenkbrauwvormgeving, verven, lamineren en lash lifting voor langdurige resultaten."
+    },
+    "fashion": {
+      "title": "Fashion Styling",
+      "desc": "Garderobestyling, kleurentheorie en styling voor shoots, events en personal branding."
+    },
+    "business": {
+      "title": "Beauty Business & Ondernemen",
+      "desc": "Bouw je eigen merk: prijzen, klantcommunicatie, social media en de basis van ondernemen in beauty."
+    }
+  },
+
+  "salonCategories": {
+    "hair": "Haar",
+    "nails": "Nagelbehandelingen",
+    "makeup": "Make-up"
+  },
+
+  "salonMenuSuffix": "Menu",
+
+  "salon": {
+    "hair": {
+      "signature": {
+        "title": "Signature Knip & Styling",
+        "desc": "Precisieknipbeurt afgestemd op jouw gezichtsvorm met een luxe blow-out."
+      },
+      "balayage": {
+        "title": "Balayage & Gloss",
+        "desc": "Handgeschilderde highlights voor een natuurlijke, zongekuste uitstraling."
+      }
+    },
+    "nails": {
+      "manicure": {
+        "title": "Gel Couture Manicure",
+        "desc": "Verzorging van de nagelriemen, vormgeving en langdurige gellak."
+      },
+      "pedicure": {
+        "title": "Luxe Pedicure",
+        "desc": "Scrub, masker, hot stone massage en lak."
+      }
+    },
+    "makeup": {
+      "event": {
+        "title": "Event Make-up",
+        "desc": "Langhoudende HD make-up voor speciale gelegenheden."
+      },
+      "bridal": {
+        "title": "Bruidsarrangement",
+        "desc": "Proefsessie plus make-up op de trouwdag."
+      }
+    }
+  }
+},
   "brochure": {
     "title": "Volledige salon menukaart",
     "subtitle": "Transparante prijzen. Op maat gemaakte ervaring.",
@@ -131,7 +191,6 @@
     "coloredGellakWithSet": "Gekleurde gellak bij set",
     "polishNoUv": "Lakken (zonder UV-lamp)"
   },
-  
   "testimonials": {
     "kicker": "Wat studenten zeggen",
     "titlePrefix": "Studenten",
@@ -163,9 +222,9 @@
     "titleLine2Prefix": "Een",
     "titleLine2Emphasis": "Leerbedrijf",
     "paragraph1": {
-      "prefix": "Bij ",
-      "brand": "Sparkle in Style",
-      "suffix": " leiden we talent op voor een toekomst in beauty & styling. Als erkend leerbedrijf combineren we theorie met veel praktijk — in kleine groepen en met persoonlijke begeleiding, in een echte salonomgeving."
+      "prefix": "",
+      "brand": "",
+      "suffix": "Leerbedrijf Sparkle in Style, geeft kwalitatieve, vakinhoudelijke opleidingen en sociale coaching aan jongeren en volwassenen. Het leerbedrijf biedt kwetsbare doelgroepen de kans een vak te leren in de uiterlijke verzorging. De leerlingen worden geleerd om werknemersvaardigheden te ontwikkelen en aan hun persoonlijke ontwikkeling te werken. Tevens een opvangnet voor drop-outs leerlingen van middelbare scholen. Naast het aanleren van een vak, worden de leerlingen intensief en individueel begeleid om werknemersvaardigheden te ontwikkelen waardoor de leerlingen zelfbewuster en zelfredzamer worden en een intrede in de arbeidsmarkt/maatschappij mogelijk wordt."
     },
     "spaceLabel": "Onze ruimte:",
     "spaceText": "rustig, professioneel en ontworpen voor zowel opleiding als klantbeleving.",
@@ -182,47 +241,38 @@
     "titlePrefix": "Neem",
     "titleEmphasis": "contact op",
     "description": "Bezoek ons, bel ons of stuur een bericht — we helpen je graag met academy-opleidingen of salonafspraken.",
-
     "info": {
       "locationTitle": "Den Haag",
       "addressLine1": "Zuidlarenstraat 57",
       "addressLine2": "2545 VP Den Haag",
-
       "contactTitle": "Contact",
       "phone": "06-15371014",
       "email": "info@sparkleinstyle.nl",
-
       "hoursTitle": "Openingstijden",
       "hoursLine": "Ma – Vr: 09:00 – 18:00"
     },
-
     "form": {
       "title": "Stuur ons een bericht",
       "firstNameLabel": "Voornaam",
       "lastNameLabel": "Achternaam",
       "emailLabel": "E-mailadres",
       "subjectLabel": "Onderwerp",
-
       "firstNamePlaceholder": "Jane",
       "lastNamePlaceholder": "Doe",
       "emailPlaceholder": "jane@voorbeeld.nl",
-
       "subjectOptions": {
         "academy": "Inschrijving Academy",
         "salon": "Salonafspraak",
         "general": "Algemene vraag"
       },
-
       "whichCourseLabel": "Welke opleiding?",
       "preferredServiceLabel": "Gewenste behandeling",
-
       "academyCourses": [
         "Make-up & Visagie",
         "Haar & Styling",
         "Nagelstyling",
         "Nog niet zeker"
       ],
-
       "salonServices": [
         "Knippen / Styling",
         "Balayage / Kleuren",
@@ -230,20 +280,7 @@
         "Bruidsmake-up",
         "Anders"
       ],
-
       "submit": "Verstuur aanvraag"
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 }

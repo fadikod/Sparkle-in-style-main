@@ -60,11 +60,10 @@ const About: React.FC = () => {
               .
             </h2>
 
-            <p className="text-neutral-600 font-light leading-[1.6] text-base md:text-[1.05rem]">
-              {t("about.paragraph1.prefix")}{" "}
-              <strong>{t("about.paragraph1.brand")}</strong>
-              {t("about.paragraph1.suffix")}
-            </p>
+<p className="text-neutral-600 font-light leading-[1.6] text-base md:text-[1.05rem]">
+  {t("about.paragraph1.suffix")}
+</p>
+
 
             <p className="text-neutral-600 leading-[1.6] text-sm md:text-base">
               <span className="font-medium text-neutral-900">

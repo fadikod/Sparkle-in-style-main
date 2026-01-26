@@ -35,8 +35,8 @@ const Hero: React.FC = () => {
       </div>
 
       {/* === CONTENT === */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl md:ml-0 lg:-ml-20 xl:-ml-35 space-y-8">
+      <div className="relative z-10 w-full px-[clamp(1rem,4vw,5vw)]">
+        <div className="max-w-[min(60ch,45vw)] space-y-8">
           {/* Breadcrumb */}
           <div className="inline-flex items-center gap-2 rounded-full border border-gold-200 bg-neutral-50/90 px-5 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-neutral-600 shadow-sm">
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gold-500/15">
@@ -46,17 +46,17 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h1 className="font-serif font-semibold leading-[0.9] text-neutral-900">
-            <span className="block text-[3.5rem] sm:text-[4.2rem] lg:text-[4.6rem]">
+          <h1 className="font-serif font-semibold leading-[0.92] text-neutral-900">
+            <span className="block text-[clamp(2.6rem,6vw,4.6rem)]">
               {t("hero.titleLine1")}
             </span>
-            <span className="mt-3 block text-[3rem] sm:text-[3.4rem] lg:text-[3.6rem] italic text-gold-500">
+            <span className="mt-3 block italic text-gold-500 text-[clamp(2.2rem,5vw,3.6rem)]">
               {t("hero.titleLine2")}
             </span>
           </h1>
 
           {/* Paragraph */}
-          <p className="text-[0.98rem] sm:text-base lg:text-lg leading-[1.55] text-neutral-700 max-w-xl mt-2">
+          <p className="text-[clamp(0.95rem,1.2vw,1.125rem)] leading-[1.55] text-neutral-700">
             {t("hero.description")}
           </p>
 
@@ -110,7 +110,7 @@ const Hero: React.FC = () => {
       <button
         type="button"
         onClick={() => scrollToId("services")}
-        className="group absolute bottom-8 left-1/2 -translate-x-1/2 rounded-full border border-gold-300 bg-neutral-50/90 px-4 py-2 text-xs text-neutral-600 shadow-sm transition hover:bg-neutral-50"
+        className="group absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 rounded-full border border-gold-300 bg-neutral-50/90 px-4 py-2 text-xs text-neutral-600 shadow-sm transition hover:bg-neutral-50"
       >
         <span className="flex items-center gap-2">
           {t("hero.scrollDown")}

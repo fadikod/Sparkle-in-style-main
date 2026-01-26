@@ -32,7 +32,9 @@ const Testimonials: React.FC = () => {
 
   return (
     // ❗ background comes from App.tsx
-    <section id="stories" className="relative py-10 md:py-12 overflow-hidden">
+    <section id="stories" className="relative pt-0 pb-10 md:pt-2 md:pb-12 overflow-hidden">
+
+
       {/* Subtle decorative glow */}
       <div className="absolute -top-20 right-0 h-64 w-64 bg-gold-500/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
       <div className="absolute bottom-0 left-0 h-64 w-64 bg-gold-500/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
