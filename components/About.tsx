@@ -85,14 +85,7 @@ const About: React.FC = () => {
               ))}
             </div>
 
-            <div className="pt-1">
-              <button
-                onClick={handleScrollToContact}
-                className="text-xs sm:text-sm uppercase tracking-[0.2em] font-medium text-neutral-900 border-b border-neutral-900 pb-1 hover:text-gold-600 hover:border-gold-600 transition-all"
-              >
-                {t("about.cta")}
-              </button>
-            </div>
+
           </div>
         </div>
       </div>
