@@ -51,11 +51,7 @@ const goToServices = (tab: "salon" | "academy") => {
     navigate(`/#${id}`);
   };
 
-  const goToEvents = () => {
-    setOpen(false);
-    navigate("/events");
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  };
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-50/70 backdrop-blur-md border-b border-neutral-200/40">
@@ -128,13 +124,7 @@ const goToServices = (tab: "salon" | "academy") => {
 
         {/* RIGHT — Desktop actions */}
         <div className="ml-auto hidden md:flex items-center gap-3 justify-end shrink-0">
-          <button
-            type="button"
-            onClick={goToEvents}
-            className="rounded-full border border-gold-200 px-4 py-2 text-xs uppercase tracking-[0.18em] text-gold-700 bg-gold-50/60 hover:bg-gold-100 transition whitespace-nowrap"
-          >
-            {t("nav.upcomingEvents")}
-          </button>
+
 
           <div className="inline-flex items-center rounded-full border border-neutral-200 bg-white/70 backdrop-blur p-1 shrink-0">
             <button
@@ -244,15 +234,7 @@ const goToServices = (tab: "salon" | "academy") => {
               </Link>
             </li>
 
-            <li>
-              <button
-                type="button"
-                onClick={goToEvents}
-                className="mt-2 w-full rounded-full border border-gold-200 px-4 py-2 text-xs uppercase tracking-[0.18em] text-gold-700 bg-gold-50/60 text-center hover:bg-gold-100 transition whitespace-nowrap"
-              >
-                {t("nav.upcomingEvents")}
-              </button>
-            </li>
+
           </ul>
         </div>
       )}

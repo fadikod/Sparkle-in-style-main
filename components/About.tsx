@@ -13,7 +13,11 @@ const About: React.FC = () => {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const highlights: string[] = t("about.highlights", { returnObjects: true }) as unknown as string[];
+  // ✅ SAFE runtime handling for highlights
+  const rawHighlights = t("about.highlights", { returnObjects: true });
+  const highlights: string[] = Array.isArray(rawHighlights)
+    ? rawHighlights
+    : [];
 
   return (
     // ❗ background is controlled by App.tsx
@@ -60,10 +64,9 @@ const About: React.FC = () => {
               .
             </h2>
 
-<p className="text-neutral-600 font-light leading-[1.6] text-base md:text-[1.05rem]">
-  {t("about.paragraph1.suffix")}
-</p>
-
+            <p className="text-neutral-600 font-light leading-[1.6] text-base md:text-[1.05rem]">
+              {t("about.paragraph1.suffix")}
+            </p>
 
             <p className="text-neutral-600 leading-[1.6] text-sm md:text-base">
               <span className="font-medium text-neutral-900">
@@ -72,20 +75,21 @@ const About: React.FC = () => {
               {t("about.spaceText")}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              {highlights.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <div className="p-2 rounded-full bg-white border border-neutral-200 shadow-sm">
-                    <Star className="w-4 h-4 text-gold-500" />
+            {/* ✅ SAFE rendering (will never crash) */}
+            {highlights.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                {highlights.map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="p-2 rounded-full bg-white border border-neutral-200 shadow-sm">
+                      <Star className="w-4 h-4 text-gold-500" />
+                    </div>
+                    <span className="text-sm text-neutral-800 font-medium tracking-wide">
+                      {item}
+                    </span>
                   </div>
-                  <span className="text-sm text-neutral-800 font-medium tracking-wide">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

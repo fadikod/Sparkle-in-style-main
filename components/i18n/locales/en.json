@@ -29,7 +29,7 @@
     "breadcrumb": "The Hague • Beauty Academy & Beauty Salon",
     "titleLine1": "Beauty & Styling",
     "titleLine2": " education with a future",
-    "description": "Work in a real salon environment with clients, colours, and trends. Sparkle in Style combines a professional Beauty Academy with a modern Beauty Salon — giving you hands-on experience from day one.",
+    "description": "Do you want to Work in a real salon environment with clients, colours and trends? Sparkle in Style combines a professional Beauty Academy with a modern Beauty Salon — giving you hands-on experience from day one.",
     "ctaPrograms": "View Programs",
     "ctaIntake": "Book an Intake",
     "scrollDown": "Scroll Down",
@@ -45,88 +45,109 @@
   "buttons": {
     "viewFullSalonMenu": "View Full Salon Menu"
   },
-"services": {
-  "titlePrefix": "Our",
-  "titleEmphasis": "Expertise",
+  "services": {
+    "titlePrefix": "Our",
+    "titleEmphasis": "Expertise",
 
-  "tabs": {
-    "salon": "Salon Services",
-    "academy": "Academy Programs"
-  },
+    "tabs": {
+      "salon": "Salon Services",
+      "academy": "Academy Programs"
+    },
 
-  "academy": {
-    "ariaPrev": "Previous academy programs",
-    "ariaNext": "Next academy programs",
-    "enroll": "Enroll Now",
-    "durationPrefix": "",
+    "academy": {
+      "ariaPrev": "Previous academy programs",
+      "ariaNext": "Next academy programs",
+      "enroll": "Enroll Now",
+      "durationPrefix": "",
 
-    "makeup": {
-      "title": "Make-up & Beauty Styling",
-      "desc": "From essential techniques to editorial looks, including a professional portfolio day."
+      "makeup": {
+        "title": "Make-up & Beauty Styling",
+        "desc": "From essential techniques to editorial looks, including a professional portfolio day."
+      },
+      "hair": {
+        "title": "Hair & Styling",
+        "desc": "Cutting, blow-drying, and updos, plus salon etiquette and client consultation."
+      },
+      "nails": {
+        "title": "Nail Styling",
+        "desc": "Gel polish, acrylics, and nail care with complete hygiene protocol training."
+      },
+      "lash": {
+        "title": "Lash & Brow Styling",
+        "desc": "Brow shaping, tinting, lamination, and lash lifting to create long-lasting, defined looks."
+      },
+      "fashion": {
+        "title": "Fashion Styling",
+        "desc": "Wardrobe curation, color theory, and styling for shoots, events, and personal branding."
+      },
+      "business": {
+        "title": "Beauty Business & Entrepreneurship",
+        "desc": "Build your own brand: pricing, client communication, social media, and beauty business basics."
+      },
+
+      "support": {
+        "title": "More Than an Academy",
+        "subtitle": "Sparkle in Style supports students beyond training by connecting education, coaching and real work opportunities.",
+
+        "coaching": {
+          "title": "Job Coaching",
+          "desc": "We offer work experience placements and job coaching for our students and external participants, in collaboration with employers."
+        },
+
+        "teaching": {
+          "title": "Education & Teaching",
+          "desc": "In collaboration with regional secondary schools, students can continue their compulsory education while training with us."
+        },
+
+        "work": {
+          "title": "Work & Employers",
+          "desc": "We work with a large network of employers who offer apprenticeships, internships and practical training opportunities."
+        }
+      }
     },
-    "hair": {
-      "title": "Hair & Styling",
-      "desc": "Cutting, blow-drying, and updos, plus salon etiquette and client consultation."
+
+    "salonCategories": {
+      "hair": "Hair",
+      "nails": "Nail Treatments",
+      "makeup": "Makeup"
     },
-    "nails": {
-      "title": "Nail Styling",
-      "desc": "Gel polish, acrylics, and nail care with complete hygiene protocol training."
-    },
-    "lash": {
-      "title": "Lash & Brow Styling",
-      "desc": "Brow shaping, tinting, lamination, and lash lifting to create long-lasting, defined looks."
-    },
-    "fashion": {
-      "title": "Fashion Styling",
-      "desc": "Wardrobe curation, color theory, and styling for shoots, events, and personal branding."
-    },
-    "business": {
-      "title": "Beauty Business & Entrepreneurship",
-      "desc": "Build your own brand: pricing, client communication, social media, and beauty business basics."
+
+    "salonMenuSuffix": "Menu",
+
+    "salon": {
+      "hair": {
+        "signature": {
+          "title": "Signature Cut & Style",
+          "desc": "Precision cutting tailored to your face shape with a luxury blowout."
+        },
+        "balayage": {
+          "title": "Balayage & Gloss",
+          "desc": "Hand-painted highlights for a natural, sun-kissed dimension."
+        }
+      },
+      "nails": {
+        "manicure": {
+          "title": "Gel Couture Manicure",
+          "desc": "Detailed cuticle care, shaping, and long-lasting gel polish."
+        },
+        "pedicure": {
+          "title": "Luxury Pedicure",
+          "desc": "Exfoliating scrub, mask, hot stone massage, and polish."
+        }
+      },
+      "makeup": {
+        "event": {
+          "title": "Event Makeup",
+          "desc": "Long-wearing HD makeup for special occasions."
+        },
+        "bridal": {
+          "title": "Bridal Package",
+          "desc": "Trial session plus wedding day application."
+        }
+      }
     }
   },
 
-  "salonCategories": {
-    "hair": "Hair",
-    "nails": "Nail Treatments",
-    "makeup": "Makeup"
-  },
-
-  "salonMenuSuffix": "Menu",
-
-  "salon": {
-    "hair": {
-      "signature": {
-        "title": "Signature Cut & Style",
-        "desc": "Precision cutting tailored to your face shape with a luxury blowout."
-      },
-      "balayage": {
-        "title": "Balayage & Gloss",
-        "desc": "Hand-painted highlights for a natural, sun-kissed dimension."
-      }
-    },
-    "nails": {
-      "manicure": {
-        "title": "Gel Couture Manicure",
-        "desc": "Detailed cuticle care, shaping, and long-lasting gel polish."
-      },
-      "pedicure": {
-        "title": "Luxury Pedicure",
-        "desc": "Exfoliating scrub, mask, hot stone massage, and polish."
-      }
-    },
-    "makeup": {
-      "event": {
-        "title": "Event Makeup",
-        "desc": "Long-wearing HD makeup for special occasions."
-      },
-      "bridal": {
-        "title": "Bridal Package",
-        "desc": "Trial session plus wedding day application."
-      }
-    }
-  }
-},
   "brochure": {
     "title": "Full Salon Menu",
     "subtitle": "Transparent pricing. Tailored experience.",
@@ -157,167 +178,45 @@
     "categories": {
       "nails": {
         "title": "Nail Services",
-        "subtitle": "Manicure, gel & extras",
-        "services": {
-          "manicure": { "name": "Manicure sets", "desc": "Natural, French & refills" },
-          "colored": { "name": "Colored set", "desc": "Colored set & refills" },
-          "classicCare": { "name": "Classic care", "desc": "Basic or luxury manicure" }
-        }
+        "subtitle": "Manicure, gel & extras"
       },
       "hair": {
         "title": "Hair Services",
-        "subtitle": "Cuts, color & treatments",
-        "services": {
-          "cuts": { "name": "Cuts", "desc": "Trim, model cut, kids, wash + cut + dry" },
-          "styling": { "name": "Styling", "desc": "Model blow-dry & styling (v.a.)" },
-          "color": { "name": "Color", "desc": "Coloring & root touch-up (v.a.)" },
-          "highlights": { "name": "Highlights", "desc": "Per 15 foils" },
-          "treatment": { "name": "Treatment", "desc": "Vitamin treatment" }
-        }
+        "subtitle": "Cuts, color & treatments"
       },
       "browsLashes": {
         "title": "Brows & Lashes",
-        "subtitle": "Lift, tint, shape & extensions",
-        "services": {
-          "lashes": { "name": "Lashes", "desc": "Tint, lift, lift + tint" },
-          "extensions": { "name": "Extensions", "desc": "One-by-one or volume" },
-          "brows": { "name": "Brows", "desc": "Shape, tint, shape + tint" }
-        }
+        "subtitle": "Lift, tint, shape & extensions"
       },
       "makeup": {
         "title": "Makeup",
-        "subtitle": "Event looks & bridal packages",
-        "services": {
-          "event": { "name": "Event Makeup", "desc": "Professional long-wear makeup" },
-          "bridal": { "name": "Bridal Package", "desc": "Trial + wedding day application" }
-        }
+        "subtitle": "Event looks & bridal packages"
       }
     }
   },
 
-  "brochureAddons": {
-    "nailArt": "Nail art",
-    "repair": "Repair (per nail)",
-    "gelRemoval": "Gel polish removal",
-    "acrylicRemoval": "Remove acrylic set",
-    "topcoat": "Gel topcoat",
-    "coloredGellak": "Colored gel polish",
-    "coloredGellakWithSet": "Colored gel polish (with set)",
-    "polishNoUv": "Polish (no UV lamp)"
-  },
-  
   "testimonials": {
     "kicker": "What Students Say",
     "titlePrefix": "Student",
     "titleEmphasis": "Stories",
-    "reviews": [
-      {
-        "quote": "Thanks to Sparkle in Style, I now have a job in a top salon. Super practical and you build a portfolio immediately.",
-        "author": "Sara",
-        "course": "Make-up & Visagie"
-      },
-      {
-        "quote": "Small groups and genuinely personal feedback. I felt seen and improved with every single lesson.",
-        "author": "Esra",
-        "course": "Hair & Styling"
-      },
-      {
-        "quote": "Hygiene, technique, and pace — exactly what you need in real practice. Highly recommended!",
-        "author": "Lotte",
-        "course": "Nail Styling"
-      }
-    ],
-    "rating": "★★★★★ Rated 4.9/5 by 120+ Graduates",
     "podcastTeaser": "Prefer listening to their stories?",
     "podcastCta": "Listen to the Podcast"
   },
-  
-"about": {
-  "kicker": "About Sparkle in Style",
-  "titleLine1": "More than a Salon.",
-  "titleLine2Prefix": "A",
-  "titleLine2Emphasis": "Training Company",
-  "paragraph1": {
-    "prefix": "",
-    "brand": "",
-    "suffix": "Sparkle in Style is a certified learning company that provides high-quality, vocational training and social coaching for young people and adults. We offer people from vulnerable groups the opportunity to learn a profession in personal care and beauty. Students develop employability skills and work on their personal growth, and we also provide support as a safety net for secondary-school drop-outs. Alongside learning the profession, students receive intensive one-to-one guidance to build work skills, become more confident and self-reliant, and take steps towards participation in the labour market and society."
+
+  "about": {
+    "kicker": "About Sparkle in Style",
+    "titleLine1": "More than a Salon.",
+    "titleLine2Prefix": "A",
+    "titleLine2Emphasis": "Training Company",
+    "spaceLabel": "Our space:",
+    "spaceText": "calm, professional, and designed for both education and client experience.",
+    "cta": "Learn about our mission",
+    "imageAlt": "Sparkle in Style interior"
   },
-  "spaceLabel": "Our space:",
-  "spaceText": "calm, professional, and designed for both education and client experience.",
-  "highlights": [
-    "Experienced Instructors",
-    "Practice-Oriented",
-    "Internship & Portfolio",
-    "Inclusive Community"
-  ],
-  "cta": "Learn about our mission",
-  "imageAlt": "Sparkle in Style interior"
-}
-,
-  
+
   "contact": {
     "titlePrefix": "Get in",
     "titleEmphasis": "Touch",
-    "description": "Visit us, call us, or send a message — we’re happy to help with academy programs or salon appointments.",
-
-    "info": {
-      "locationTitle": "Den Haag",
-      "addressLine1": "Zuidlarenstraat 57",
-      "addressLine2": "2545 VP Den Haag",
-
-      "contactTitle": "Contact",
-      "phone": "06-15371014",
-      "email": "info@sparkleinstyle.nl",
-
-      "hoursTitle": "Opening Hours",
-      "hoursLine": "Mon – Fri: 09:00 – 18:00"
-    },
-
-    "form": {
-      "title": "Send us a message",
-      "firstNameLabel": "First Name",
-      "lastNameLabel": "Last Name",
-      "emailLabel": "Email Address",
-      "subjectLabel": "Subject",
-
-      "firstNamePlaceholder": "Jane",
-      "lastNamePlaceholder": "Doe",
-      "emailPlaceholder": "jane@example.com",
-
-      "subjectOptions": {
-        "academy": "Academy Enrollment",
-        "salon": "Salon Appointment",
-        "general": "General Inquiry"
-      },
-
-      "whichCourseLabel": "Which Course?",
-      "preferredServiceLabel": "Preferred Service",
-
-      "academyCourses": [
-        "Make-up & Visagie",
-        "Hair & Styling",
-        "Nail Styling",
-        "Undecided"
-      ],
-
-      "salonServices": [
-        "Hair Cut / Styling",
-        "Balayage / Color",
-        "Manicure / Pedicure",
-        "Bridal Makeup",
-        "Other"
-      ],
-
-      "submit": "Submit Request"
-    }
+    "description": "Visit us, call us, or send a message — we’re happy to help with academy programs or salon appointments."
   }
-  
-
-
-
-
-
-
 }
-
-

@@ -104,95 +104,51 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Form Side */}
-          <div className="lg:w-[55%]">
-            <div className="relative rounded-2xl bg-[#EADCCF] border border-neutral-200 shadow-md p-5 md:p-6">
-              <div className="relative z-10">
-                <h3 className="font-display text-lg text-neutral-900 mb-4">
-                  {t("contact.form.title")}
-                </h3>
+{/* Contact – Action Side */}
+<div className="lg:w-[55%]">
+  <div className="relative rounded-2xl bg-[#EADCCF] border border-neutral-200 shadow-sm p-6 md:p-8 flex flex-col justify-center">
+    <h3 className="font-display text-xl md:text-2xl text-neutral-900 mb-3">
+      {t("contact.quickContact.title")}
+    </h3>
 
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-                        {t("contact.form.firstNameLabel")}
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full bg-transparent border-b border-neutral-300 py-2 text-sm text-neutral-900 focus:outline-none focus:border-gold-500"
-                        placeholder={t("contact.form.firstNamePlaceholder")}
-                      />
-                    </div>
+    <p className="text-neutral-600 text-sm leading-relaxed mb-6 max-w-md">
+      {t("contact.quickContact.description")}
+    </p>
 
-                    <div className="space-y-1">
-                      <label className="text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-                        {t("contact.form.lastNameLabel")}
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full bg-transparent border-b border-neutral-300 py-2 text-sm text-neutral-900 focus:outline-none focus:border-gold-500"
-                        placeholder={t("contact.form.lastNamePlaceholder")}
-                      />
-                    </div>
-                  </div>
+    <div className="space-y-4">
+      {/* WhatsApp – PRIMARY */}
+      <a
+        href="https://wa.me/31615371014?text=Hi%20Sparkle%20in%20Style,%20I%20have%20a%20question"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-3 rounded-full border border-gold-300 bg-gold-50 px-4 py-3 text-neutral-900 hover:bg-gold-100 transition"
+      >
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-gold-600 border border-gold-200">
+          💬
+        </span>
+        <span className="font-medium text-sm">
+          {t("contact.quickContact.whatsapp")}
+        </span>
+      </a>
 
-                  <div className="space-y-1">
-                    <label className="text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-                      {t("contact.form.emailLabel")}
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full bg-transparent border-b border-neutral-300 py-2 text-sm text-neutral-900 focus:outline-none focus:border-gold-500"
-                      placeholder={t("contact.form.emailPlaceholder")}
-                    />
-                  </div>
+      {/* Phone – SECONDARY */}
+      <div className="flex items-center gap-3 text-sm text-neutral-600 pl-1">
+        <span className="text-neutral-500">
+          {t("contact.quickContact.callHint")}
+        </span>
+        <a
+          href="tel:+31615371014"
+          className="hover:text-gold-600 transition font-medium"
+        >
+          06-15371014
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-                  <div className="space-y-1">
-                    <label className="text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-                      {t("contact.form.subjectLabel")}
-                    </label>
-                    <select
-                      value={subjectKey}
-                      onChange={(e) => setSubjectKey(e.target.value as SubjectKey)}
-                      className="w-full bg-white border-b border-neutral-300 py-2 text-sm text-neutral-900 focus:outline-none focus:border-gold-500"
-                    >
-                      {subjectOptions.map((opt) => (
-                        <option key={opt.key} value={opt.key}>
-                          {opt.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
 
-                  {(subjectKey === "academy" || subjectKey === "salon") && (
-                    <div className="space-y-1 animate-fade-in">
-                      <label className="text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-                        {subjectKey === "academy"
-                          ? t("contact.form.whichCourseLabel")
-                          : t("contact.form.preferredServiceLabel")}
-                      </label>
 
-                      <select className="w-full bg-white border-b border-neutral-300 py-2 text-sm text-neutral-900 focus:outline-none focus:border-gold-500">
-                        {(subjectKey === "academy" ? academyCourses : salonServices).map(
-                          (item) => (
-                            <option key={item}>{item}</option>
-                          )
-                        )}
-                      </select>
-                    </div>
-                  )}
-
-                  <button
-                    type="button"
-                    className="w-full mt-4 py-3 bg-gold-500 text-neutral-900 text-[11px] font-semibold uppercase tracking-[0.22em] hover:bg-gold-400 transition-all rounded-full"
-                  >
-                    {t("contact.form.submit")}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

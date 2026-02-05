@@ -81,10 +81,7 @@ const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Rating */}
-        <div className="text-center mt-6 text-neutral-500 text-xs uppercase tracking-widest">
-          {t("testimonials.rating")}
-        </div>
+
 
         {/* Podcast teaser */}
         <div className="mt-6 flex flex-col items-center gap-2">
