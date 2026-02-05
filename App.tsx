@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
@@ -17,13 +18,19 @@ import GalleryPage from "./pages/GalleryPage";
 import EventsPage from "./pages/EventsPage";
 
 const App: React.FC = () => {
+  const { ready } = useTranslation();
+  const location = useLocation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showFloat, setShowFloat] = useState(false);
 
-  const location = useLocation();
-
   const openBrochure = () => setIsModalOpen(true);
   const closeBrochure = () => setIsModalOpen(false);
+
+  // ⛔ VERY IMPORTANT: wait for i18n before rendering anything
+  if (!ready) {
+    return null; // or loader later
+  }
 
   // Floating brochure button visibility
   useEffect(() => {
@@ -32,7 +39,7 @@ const App: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hash scroll support: /#services, /#academy, /#about, /#contact...
+  // Hash scroll support: /#services, /#about, etc.
   useEffect(() => {
     if (!location.hash) return;
 
@@ -40,7 +47,7 @@ const App: React.FC = () => {
     const t = window.setTimeout(() => {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 60);
+    }, 80);
 
     return () => window.clearTimeout(t);
   }, [location.pathname, location.hash]);
@@ -55,29 +62,18 @@ const App: React.FC = () => {
           path="/"
           element={
             <main>
-              {/* HERO */}
               <section id="hero">
                 <Hero />
               </section>
 
-              {/* SERVICES – spacing controlled inside Services.tsx */}
               <section id="services" className="bg-luxury-base">
                 <Services onOpenBrochure={openBrochure} />
               </section>
 
-              {/* ACADEMY (placeholder) */}
-              <section id="academy" className="bg-luxury-base">
-                <div className="section-shell">
-                  {/* Future Academy content */}
-                </div>
-              </section>
-
-              {/* TESTIMONIALS – spacing controlled inside Testimonials.tsx */}
               <section className="bg-luxury-warm border-y border-neutral-200/60">
                 <Testimonials />
               </section>
 
-              {/* ABOUT */}
               <section
                 id="about"
                 className="bg-luxury-sand border-y border-neutral-200/40"
@@ -87,7 +83,6 @@ const App: React.FC = () => {
                 </div>
               </section>
 
-              {/* CONTACT */}
               <section
                 id="contact"
                 className="bg-luxury-base border-y border-neutral-200/60"
@@ -109,7 +104,7 @@ const App: React.FC = () => {
 
       <Footer />
 
-      {/* Modal */}
+      {/* Brochure Modal */}
       <BrochureModal isOpen={isModalOpen} onClose={closeBrochure} />
 
       {/* Floating Brochure Button */}

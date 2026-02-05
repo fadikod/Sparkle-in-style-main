@@ -2,33 +2,32 @@ import React from "react";
 import { Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-// ✅ Put your interior image in: src/assets/interior.jpg (or .png)
+// Interior image
 import interiorImg from "../assets/interior.jpg";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
 
-  const handleScrollToContact = () => {
-    const el = document.getElementById("contact");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  // ✅ SAFELY read highlights from i18n
+  const rawHighlights = t("about.highlights", {
+    returnObjects: true,
+    defaultValue: [],
+  });
 
-  // ✅ SAFE runtime handling for highlights
-  const rawHighlights = t("about.highlights", { returnObjects: true });
   const highlights: string[] = Array.isArray(rawHighlights)
     ? rawHighlights
     : [];
 
   return (
-    // ❗ background is controlled by App.tsx
     <section id="about" className="relative py-12 md:py-14">
-      {/* soft background glow */}
+      {/* Decorative background glows */}
       <div className="pointer-events-none absolute -top-10 right-0 h-56 w-56 rounded-full bg-gold-500/6 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-[-4rem] h-56 w-56 rounded-full bg-gold-500/5 blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-10 md:gap-12 items-center">
-          {/* Image */}
+
+          {/* IMAGE */}
           <div className="lg:w-[45%] relative">
             <div className="relative z-10 max-w-md mx-auto lg:mx-0 overflow-hidden rounded-3xl border border-gold-500/25 bg-white shadow-md">
               <div className="aspect-[5/4] w-full relative">
@@ -43,12 +42,12 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            {/* offset frame */}
+            {/* Offset decorative frames */}
             <div className="absolute -bottom-4 -right-4 w-2/3 h-2/3 border border-gold-500/20 rounded-3xl z-0 hidden md:block" />
             <div className="absolute -top-5 -left-5 w-2/3 h-2/3 bg-white/50 rounded-3xl z-0 hidden md:block" />
           </div>
 
-          {/* Content */}
+          {/* CONTENT */}
           <div className="lg:w-[55%] space-y-4">
             <span className="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">
               {t("about.kicker")}
@@ -75,7 +74,7 @@ const About: React.FC = () => {
               {t("about.spaceText")}
             </p>
 
-            {/* ✅ SAFE rendering (will never crash) */}
+            {/* HIGHLIGHTS — SAFE, NEVER CRASHES */}
             {highlights.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {highlights.map((item, index) => (
@@ -91,6 +90,7 @@ const About: React.FC = () => {
               </div>
             )}
           </div>
+
         </div>
       </div>
     </section>
