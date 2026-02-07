@@ -1,30 +1,11 @@
 {
   "nav": {
-    "services": "Diensten",
-    "academy": "Academy / Salon",
+    "services": "Salon",
+    "academy": "Academy",
     "team": "Team",
     "about": "Over ons",
     "podcast": "Podcast",
     "upcomingEvents": "Aankomende evenementen"
-  },
-
-  "footer": {
-    "brandDescription": "Professionele beauty-opleidingen en luxe salonbehandelingen — gebaseerd op passie, vakmanschap en creativiteit.",
-    "academyTitle": "Academy",
-    "academyLinks": {
-      "makeup": "Make-up & Visagie",
-      "hair": "Haar & Styling",
-      "nails": "Nagelstyling",
-      "admissions": "Toelating"
-    },
-    "salonTitle": "Salon",
-    "salonLinks": {
-      "book": "Afspraak maken",
-      "menu": "Behandelmenu",
-      "giftCards": "Cadeaubonnen"
-    },
-    "contactTitle": "Contact",
-    "copyright": "© 2025 Sparkle in Style. Alle rechten voorbehouden."
   },
 
   "hero": {
@@ -54,8 +35,8 @@
     "titleEmphasis": "Expertise",
 
     "tabs": {
-      "salon": "Salon Diensten",
-      "academy": "Academy Opleidingen"
+      "academy": "Academy Opleidingen",
+      "salon": "Salon Diensten"
     },
 
     "academy": {
@@ -63,6 +44,7 @@
       "ariaNext": "Volgende opleidingen",
       "enroll": "Nu inschrijven",
       "durationPrefix": "",
+      "jobCoachingButton": "Begeleiding & Werk / Jobcoaching",
 
       "makeup": {
         "title": "Make-up & Beauty Styling",
@@ -114,8 +96,6 @@
       "makeup": "Make-up"
     },
 
-    "salonMenuSuffix": "Menu",
-
     "salon": {
       "hair": {
         "signature": {
@@ -150,68 +130,97 @@
     }
   },
 
-  "brochure": {
-    "title": "Volledige salon menukaart",
-    "subtitle": "Transparante prijzen. Op maat gemaakte ervaring.",
-    "intro": "Elke behandeling wordt afgestemd tijdens een consult. Weet je niet zeker wat bij je past? Kies een categorie en we helpen je.",
-    "note": "Prijzen kunnen variëren op basis van consult, haarlengte en gewenste afwerking.",
-    "footerText": "Klaar om te boeken? We bevestigen de exacte optie tijdens het consult.",
-    "contact": "Contact",
-    "book": "Afspraak maken",
-    "ariaClose": "Sluiten",
-    "ariaCloseBackdrop": "Brochure sluiten"
-  },
-
   "testimonials": {
     "kicker": "Wat studenten zeggen",
     "titlePrefix": "Studenten",
     "titleEmphasis": "Verhalen",
+    "podcastTeaser": "Liever luisteren naar hun verhalen?",
+    "podcastCta": "Luister naar de podcast",
+
     "reviews": [
       {
-        "quote": "Dankzij Sparkle in Style heb ik nu een baan in een top salon. Super praktisch en je bouwt meteen een portfolio op.",
-        "author": "Sara",
-        "course": "Make-up & Visagie"
+        "quote": "Ik had nooit gedacht dat een opleiding zo praktisch en inspirerend kon zijn. Het werken met echte klanten gaf mij meteen zelfvertrouwen.",
+        "author": "Sara M.",
+        "course": "Make-up & Beauty Styling"
       },
       {
-        "quote": "Kleine groepen en echt persoonlijke feedback. Ik voelde me gezien en verbeterde bij elke les.",
-        "author": "Esra",
+        "quote": "De docenten begeleiden je echt persoonlijk. Je leert niet alleen techniek, maar ook hoe je professioneel werkt in een salon.",
+        "author": "Nadia K.",
         "course": "Haar & Styling"
       },
       {
-        "quote": "Hygiëne, techniek en tempo — precies wat je nodig hebt in de praktijk. Echt een aanrader!",
-        "author": "Lotte",
+        "quote": "Dankzij Sparkle in Style heb ik mijn richting gevonden. De combinatie van opleiding, coaching en praktijkervaring was precies wat ik nodig had.",
+        "author": "Emily R.",
         "course": "Nagelstyling"
       }
-    ],
-    "podcastTeaser": "Liever luisteren naar hun verhalen?",
-    "podcastCta": "Luister naar de podcast"
-  },
-
-  "about": {
-    "kicker": "Over Sparkle in Style",
-    "titleLine1": "Meer dan een salon.",
-    "titleLine2Prefix": "Een",
-    "titleLine2Emphasis": "Leerbedrijf",
-    "paragraph1": {
-      "prefix": "",
-      "brand": "",
-      "suffix": "Leerbedrijf Sparkle in Style biedt kwalitatieve vakopleidingen en sociale coaching aan jongeren en volwassenen. Studenten ontwikkelen werknemersvaardigheden, werken aan persoonlijke groei en krijgen begeleiding richting werk en maatschappelijke deelname."
-    },
-    "spaceLabel": "Onze ruimte:",
-    "spaceText": "rustig, professioneel en ontworpen voor zowel opleiding als klantbeleving.",
-    "highlights": [
-      "Ervaren docenten",
-      "Praktijkgericht",
-      "Stage & portfolio",
-      "Inclusieve community"
-    ],
-    "cta": "Lees meer over onze missie",
-    "imageAlt": "Interieur van Sparkle in Style"
+    ]
   },
 
   "contact": {
     "titlePrefix": "Neem",
     "titleEmphasis": "contact op",
-    "description": "Bezoek ons, bel ons of stuur een bericht — we helpen je graag met academy-opleidingen of salonafspraken."
-  }
+    "description": "Bezoek ons, bel ons of stuur een bericht — we helpen je graag met academy-opleidingen of salonafspraken.",
+
+    "quickContact": {
+      "title": "Snel contact",
+      "description": "Snel een antwoord nodig? Neem direct contact met ons op — we helpen je graag.",
+      "whatsapp": "Stuur ons een WhatsApp-bericht",
+      "callHint": "Of bel ons direct:"
+    }
+  },
+
+  "team": {
+    "kicker": "Ons Team",
+    "titlePrefix": "Maak kennis met het",
+    "titleEmphasis": "Team",
+    "description": "De professionals achter Sparkle in Style — zorgvuldig geselecteerd op kwaliteit, discipline en duurzame resultaten.",
+
+    "founder": {
+      "kicker": "Oprichter",
+      "name": "Ruby Pracht",
+      "role": "Oprichter & Creatief Directeur",
+      "paragraph1": "Sparkle in Style is ontstaan vanuit een duidelijke visie: een plek creëren waar beauty-opleidingen en professionele standaarden samenkomen, zonder concessies.",
+      "paragraph2": "Elke artiest en mentor wordt geselecteerd op technische vaardigheid, professionaliteit, discipline en het vermogen om anderen met vertrouwen en zorg te begeleiden.",
+      "imageAlt": "Oprichter van Sparkle in Style"
+    },
+
+    "leadMentor": {
+      "kicker": "Hoofdmentor",
+      "name": "Ayondi Rigters",
+      "role": "Make-up Artist",
+      "paragraph1": "Ayondi combineert verfijnde techniek met praktijkervaring uit de beauty-industrie en begeleidt studenten richting zelfvertrouwen, professionaliteit en perfectie in elk detail.",
+      "paragraph2": "Haar mentorship richt zich op moderne glamour, bruidslooks en de professionele standaarden die nodig zijn in high-end beautyomgevingen.",
+      "imageAlt": "Portret van Ayondi Rigters"
+    },
+
+    "closing": "Zorgvuldig samengesteld team • consistente kwaliteit • luxe standaarden"
+  },
+
+  "podcastPage": {
+    "kicker": "Onze Podcast",
+    "title": "Sparkle in Style Podcast",
+    "description": "Echte verhalen van onze studenten over groei, zelfvertrouwen en het najagen van hun dromen.",
+    "latest": "Laatste aflevering",
+    "featuredCta": "Bekijk het verhaal van deze student op YouTube.",
+    "allEpisodes": "Alle afleveringen",
+    "watch": "Bekijk"
+  },
+"about": {
+  "kicker": "OVER SPARKLE IN STYLE",
+  "titleLine1": "Meer dan een salon.",
+  "titleLine2Prefix": "Een",
+  "titleLine2Emphasis": "Leerbedrijf.",
+  "paragraph1": "Leerbedrijf Sparkle in Style biedt kwalitatieve vakopleidingen en sociale coaching aan jongeren en volwassenen. Studenten ontwikkelen werknemersvaardigheden, werken aan persoonlijke groei en krijgen begeleiding richting werk en maatschappelijke deelname.",
+  "spaceLabel": "Onze ruimte:",
+  "spaceText": "rustig, professioneel en ontworpen voor zowel opleiding als klantbeleving.",
+"features": [
+  "Ervaren docenten",
+  "Praktijkgericht",
+  "Stage & Portfolio",
+  "Inclusieve gemeenschap"
+]
+
+}
+
+
 }

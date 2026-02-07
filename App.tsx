@@ -107,20 +107,7 @@ const App: React.FC = () => {
       {/* Brochure Modal */}
       <BrochureModal isOpen={isModalOpen} onClose={closeBrochure} />
 
-      {/* Floating Brochure Button */}
-      <button
-        onClick={openBrochure}
-        className={`fixed bottom-8 right-8 z-40 bg-gold-500 text-white p-4 rounded-full shadow-2xl hover:bg-gold-600 transition-all duration-500 hover:scale-110 flex items-center gap-2 group ${
-          showFloat ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-        }`}
-        aria-label="Open brochure"
-        type="button"
-      >
-        <Download className="w-5 h-5" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 text-xs uppercase tracking-widest whitespace-nowrap">
-          Get Brochure
-        </span>
-      </button>
+
     </div>
   );
 };

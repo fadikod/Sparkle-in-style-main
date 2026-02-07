@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import sisLogo from "../assets/1.png";
@@ -9,9 +9,7 @@ const activeNavLinkClass = "text-gold-600";
 
 const Navigation: React.FC = () => {
   const [open, setOpen] = useState(false);
-
   const navigate = useNavigate();
-  const location = useLocation();
   const { t, i18n } = useTranslation();
 
   const currentLang = useMemo(() => {
@@ -23,40 +21,39 @@ const Navigation: React.FC = () => {
     i18n.changeLanguage(lng);
   };
 
-const goToServices = (tab: "salon" | "academy") => {
-  setOpen(false);
+  /* ================= SERVICES NAV ================= */
+  const goToServices = (tab: "academy" | "salon") => {
+    setOpen(false);
 
-  if (location.pathname === "/") {
-    const el = document.getElementById("services");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.dispatchEvent(new CustomEvent("services-tab", { detail: tab }));
-    }
-    return;
-  }
+    // Go to HOME with query param
+    navigate(`/?tab=${tab}`);
 
-  navigate(`/#services?tab=${tab}`);
-};
-
+    // Scroll AFTER navigation
+    requestAnimationFrame(() => {
+      const el = document.getElementById("services");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  };
 
   const goToSection = (id: string) => {
     setOpen(false);
 
-    if (location.pathname === "/") {
+    navigate("/");
+
+    requestAnimationFrame(() => {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-
-    navigate(`/#${id}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   };
-
-
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-50/70 backdrop-blur-md border-b border-neutral-200/40">
       <nav className="mx-auto flex max-w-6xl items-center px-4 py-2">
-        {/* LEFT — Logo */}
+        {/* LOGO */}
         <Link to="/" className="flex items-center gap-3 shrink-0">
           <img
             src={sisLogo}
@@ -73,11 +70,9 @@ const goToServices = (tab: "salon" | "academy") => {
           </div>
         </Link>
 
-        {/* CENTER — Desktop links */}
+        {/* DESKTOP NAV */}
         <div className="hidden md:flex flex-1 justify-center px-6">
           <ul className="flex items-center gap-7 text-sm font-medium text-neutral-700">
-
-
             <li>
               <button
                 type="button"
@@ -85,6 +80,16 @@ const goToServices = (tab: "salon" | "academy") => {
                 className={navLinkClass}
               >
                 {t("nav.academy")}
+              </button>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                onClick={() => goToServices("salon")}
+                className={navLinkClass}
+              >
+                {t("nav.services")}
               </button>
             </li>
 
@@ -122,119 +127,63 @@ const goToServices = (tab: "salon" | "academy") => {
           </ul>
         </div>
 
-        {/* RIGHT — Desktop actions */}
-        <div className="ml-auto hidden md:flex items-center gap-3 justify-end shrink-0">
-
-
-          <div className="inline-flex items-center rounded-full border border-neutral-200 bg-white/70 backdrop-blur p-1 shrink-0">
-            <button
-              type="button"
-              onClick={() => setLanguage("en")}
-              className={`w-[44px] rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition ${
-                currentLang === "en"
-                  ? "bg-gold-50 text-gold-800 border border-gold-200"
-                  : "text-neutral-600 hover:text-neutral-900"
-              }`}
-              aria-pressed={currentLang === "en"}
-            >
-              EN
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setLanguage("nl")}
-              className={`w-[44px] rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition ${
-                currentLang === "nl"
-                  ? "bg-gold-50 text-gold-800 border border-gold-200"
-                  : "text-neutral-600 hover:text-neutral-900"
-              }`}
-              aria-pressed={currentLang === "nl"}
-            >
-              NL
-            </button>
+        {/* LANGUAGE SWITCH */}
+        <div className="ml-auto hidden md:flex items-center gap-3">
+          <div className="inline-flex items-center rounded-full border border-neutral-200 bg-white/70 p-1">
+            {(["en", "nl"] as const).map((lng) => (
+              <button
+                key={lng}
+                onClick={() => setLanguage(lng)}
+                className={`w-[44px] px-3 py-1 text-[11px] font-semibold uppercase rounded-full ${
+                  currentLang === lng
+                    ? "bg-gold-50 text-gold-800 border border-gold-200"
+                    : "text-neutral-600 hover:text-neutral-900"
+                }`}
+              >
+                {lng.toUpperCase()}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Mobile toggle */}
+        {/* MOBILE TOGGLE */}
         <button
-          className="md:hidden ml-auto text-neutral-800"
+          className="md:hidden ml-auto"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle navigation menu"
-          type="button"
         >
-          {open ? <X size={26} /> : <Menu size={26} />}
+          {open ? <X /> : <Menu />}
         </button>
       </nav>
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden bg-neutral-50/95 backdrop-blur-lg border-t border-neutral-200">
-          <div className="px-6 pt-4">
-            <div className="inline-flex items-center rounded-full border border-neutral-200 bg-white/70 backdrop-blur p-1">
-              <button
-                type="button"
-                onClick={() => setLanguage("en")}
-                className={`w-[44px] rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition ${
-                  currentLang === "en"
-                    ? "bg-gold-50 text-gold-800 border border-gold-200"
-                    : "text-neutral-600 hover:text-neutral-900"
-                }`}
-                aria-pressed={currentLang === "en"}
-              >
-                EN
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setLanguage("nl")}
-                className={`w-[44px] rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition ${
-                  currentLang === "nl"
-                    ? "bg-gold-50 text-gold-800 border border-gold-200"
-                    : "text-neutral-600 hover:text-neutral-900"
-                }`}
-                aria-pressed={currentLang === "nl"}
-              >
-                NL
-              </button>
-            </div>
-          </div>
-
-          <ul className="flex flex-col gap-4 px-6 py-6 text-sm text-neutral-700">
-
-
+        <div className="md:hidden bg-neutral-50 border-t">
+          <ul className="flex flex-col gap-4 px-6 py-6 text-sm">
             <li>
-              <button
-                type="button"
-                onClick={() => goToServices("academy")}
-                className="text-left hover:text-gold-500 transition"
-              >
+              <button onClick={() => goToServices("academy")}>
                 {t("nav.academy")}
               </button>
             </li>
-
+            <li>
+              <button onClick={() => goToServices("salon")}>
+                {t("nav.services")}
+              </button>
+            </li>
             <li>
               <Link to="/team" onClick={() => setOpen(false)}>
                 {t("nav.team")}
               </Link>
             </li>
-
             <li>
-              <button
-                type="button"
-                onClick={() => goToSection("about")}
-                className="text-left hover:text-gold-500 transition"
-              >
+              <button onClick={() => goToSection("about")}>
                 {t("nav.about")}
               </button>
             </li>
-
             <li>
               <Link to="/podcast" onClick={() => setOpen(false)}>
                 {t("nav.podcast")}
               </Link>
             </li>
-
-
           </ul>
         </div>
       )}

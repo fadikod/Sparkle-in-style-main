@@ -1,35 +1,18 @@
 {
   "nav": {
-    "services": "Services",
-    "academy": "Academy / Salon",
+    "services": "Salon",
+    "academy": "Academy",
     "team": "Team",
     "about": "About",
     "podcast": "Podcast",
     "upcomingEvents": "Upcoming Events"
   },
-  "footer": {
-    "brandDescription": "Professional beauty education and luxury salon services — built on passion, skill, and creativity.",
-    "academyTitle": "Academy",
-    "academyLinks": {
-      "makeup": "Make-up & Visagie",
-      "hair": "Hair & Styling",
-      "nails": "Nail Styling",
-      "admissions": "Admissions"
-    },
-    "salonTitle": "Salon",
-    "salonLinks": {
-      "book": "Book Appointment",
-      "menu": "Service Menu",
-      "giftCards": "Gift Cards"
-    },
-    "contactTitle": "Contact",
-    "copyright": "© 2025 Sparkle in Style. All rights reserved."
-  },
+
   "hero": {
     "breadcrumb": "The Hague • Beauty Academy & Beauty Salon",
     "titleLine1": "Beauty & Styling",
-    "titleLine2": " education with a future",
-    "description": "Do you want to Work in a real salon environment with clients, colours and trends? Sparkle in Style combines a professional Beauty Academy with a modern Beauty Salon — giving you hands-on experience from day one.",
+    "titleLine2": "education with a future",
+    "description": "Do you want to work in a real salon environment with clients, colours and trends? Sparkle in Style combines a professional Beauty Academy with a modern Beauty Salon — giving you hands-on experience from day one.",
     "ctaPrograms": "View Programs",
     "ctaIntake": "Book an Intake",
     "scrollDown": "Scroll Down",
@@ -42,23 +25,26 @@
       "flexibleDesc": "Begin at several times throughout the year."
     }
   },
+
   "buttons": {
     "viewFullSalonMenu": "View Full Salon Menu"
   },
+
   "services": {
     "titlePrefix": "Our",
     "titleEmphasis": "Expertise",
 
     "tabs": {
-      "salon": "Salon Services",
-      "academy": "Academy Programs"
+      "academy": "Academy Programs",
+      "salon": "Salon Services"
     },
 
     "academy": {
-      "ariaPrev": "Previous academy programs",
-      "ariaNext": "Next academy programs",
+      "ariaPrev": "Previous programs",
+      "ariaNext": "Next programs",
       "enroll": "Enroll Now",
       "durationPrefix": "",
+      "jobCoachingButton": "Guidance & Work / Job Coaching",
 
       "makeup": {
         "title": "Make-up & Beauty Styling",
@@ -74,7 +60,7 @@
       },
       "lash": {
         "title": "Lash & Brow Styling",
-        "desc": "Brow shaping, tinting, lamination, and lash lifting to create long-lasting, defined looks."
+        "desc": "Brow shaping, tinting, lamination, and lash lifting to create long-lasting results."
       },
       "fashion": {
         "title": "Fashion Styling",
@@ -82,7 +68,7 @@
       },
       "business": {
         "title": "Beauty Business & Entrepreneurship",
-        "desc": "Build your own brand: pricing, client communication, social media, and beauty business basics."
+        "desc": "Build your own brand: pricing, client communication, social media, and beauty business essentials."
       },
 
       "support": {
@@ -93,15 +79,13 @@
           "title": "Job Coaching",
           "desc": "We offer work experience placements and job coaching for our students and external participants, in collaboration with employers."
         },
-
         "teaching": {
-          "title": "Education & Teaching",
+          "title": "Education & Guidance",
           "desc": "In collaboration with regional secondary schools, students can continue their compulsory education while training with us."
         },
-
         "work": {
           "title": "Work & Employers",
-          "desc": "We work with a large network of employers who offer apprenticeships, internships and practical training opportunities."
+          "desc": "We work with a broad network of employers offering apprenticeships, internships and practical training opportunities."
         }
       }
     },
@@ -111,8 +95,6 @@
       "nails": "Nail Treatments",
       "makeup": "Makeup"
     },
-
-    "salonMenuSuffix": "Menu",
 
     "salon": {
       "hair": {
@@ -148,75 +130,99 @@
     }
   },
 
-  "brochure": {
-    "title": "Full Salon Menu",
-    "subtitle": "Transparent pricing. Tailored experience.",
-    "intro": "Each treatment is personalized during consultation. If you’re not sure which option fits you, choose the category and we’ll guide you.",
-    "note": "Prices may vary based on consultation, hair length, and requested finish.",
-    "footerText": "Ready to book? We’ll confirm the exact option during consultation.",
-    "contact": "Contact",
-    "book": "Book Appointment",
-    "ariaClose": "Close",
-    "ariaCloseBackdrop": "Close brochure modal",
-    "addons": {
-      "show": "Show add-ons",
-      "hide": "Hide add-ons"
-    },
-    "addonsLabels": {
-      "nailArt": "Nail art",
-      "repair": "Repair (per nail)",
-      "gelRemoval": "Gel polish removal",
-      "acrylicRemoval": "Remove acrylic set",
-      "topcoat": "Gel topcoat",
-      "coloredGellak": "Colored gel polish",
-      "coloredGellakWithSet": "Colored gel polish (with set)",
-      "polishNoUv": "Polish (no UV lamp)"
-    },
-    "prices": {
-      "nailArtFrom": "from €1"
-    },
-    "categories": {
-      "nails": {
-        "title": "Nail Services",
-        "subtitle": "Manicure, gel & extras"
-      },
-      "hair": {
-        "title": "Hair Services",
-        "subtitle": "Cuts, color & treatments"
-      },
-      "browsLashes": {
-        "title": "Brows & Lashes",
-        "subtitle": "Lift, tint, shape & extensions"
-      },
-      "makeup": {
-        "title": "Makeup",
-        "subtitle": "Event looks & bridal packages"
-      }
-    }
-  },
-
   "testimonials": {
     "kicker": "What Students Say",
     "titlePrefix": "Student",
     "titleEmphasis": "Stories",
     "podcastTeaser": "Prefer listening to their stories?",
-    "podcastCta": "Listen to the Podcast"
-  },
+    "podcastCta": "Listen to the Podcast",
 
-  "about": {
-    "kicker": "About Sparkle in Style",
-    "titleLine1": "More than a Salon.",
-    "titleLine2Prefix": "A",
-    "titleLine2Emphasis": "Training Company",
-    "spaceLabel": "Our space:",
-    "spaceText": "calm, professional, and designed for both education and client experience.",
-    "cta": "Learn about our mission",
-    "imageAlt": "Sparkle in Style interior"
+    "reviews": [
+      {
+        "quote": "I never imagined learning could feel this practical and inspiring at the same time. Working with real clients gave me confidence from day one.",
+        "author": "Sara M.",
+        "course": "Make-up & Beauty Styling"
+      },
+      {
+        "quote": "The trainers truly care about your growth. I learned not only technical skills, but also how to act professionally in a real salon environment.",
+        "author": "Nadia K.",
+        "course": "Hair & Styling"
+      },
+      {
+        "quote": "Sparkle in Style helped me find my direction. The combination of education, coaching, and real experience made all the difference for me.",
+        "author": "Emily R.",
+        "course": "Nail Styling"
+      }
+    ]
   },
 
   "contact": {
     "titlePrefix": "Get in",
     "titleEmphasis": "Touch",
-    "description": "Visit us, call us, or send a message — we’re happy to help with academy programs or salon appointments."
-  }
+    "description": "Visit us, call us, or send a message — we’re happy to help with academy programs or salon appointments.",
+
+    "quickContact": {
+      "title": "Quick Contact",
+      "description": "Need a quick answer? Reach out to us directly — we’re happy to help.",
+      "whatsapp": "Send us a WhatsApp message",
+      "callHint": "Or call us directly:"
+    }
+  },
+
+  "team": {
+    "kicker": "Our Team",
+    "titlePrefix": "Meet the",
+    "titleEmphasis": "Team",
+    "description": "The professionals behind Sparkle in Style — carefully selected for quality, discipline and consistent results.",
+
+    "founder": {
+      "kicker": "Founder",
+      "name": "Ruby Pracht",
+      "role": "Founder & Creative Director",
+      "paragraph1": "Sparkle in Style was created with a clear vision: to build a place where beauty education and professional standards come together without compromise.",
+      "paragraph2": "Every artist and mentor is selected not only for technical skill, but also for professionalism, discipline and the ability to guide others with confidence and care.",
+      "imageAlt": "Founder of Sparkle in Style"
+    },
+
+    "leadMentor": {
+      "kicker": "Lead Mentor",
+      "name": "Ayondi Rigters",
+      "role": "Makeup Artist",
+      "paragraph1": "Ayondi combines refined technique with real industry experience, guiding students toward confidence, professionalism and excellence in every detail.",
+      "paragraph2": "Her mentorship focuses on modern glam, bridal aesthetics and the standards required in high-end beauty environments.",
+      "imageAlt": "Portrait of Ayondi Rigters"
+    },
+
+    "closing": "Curated team • consistent quality • luxury standards"
+  },
+
+  "podcastPage": {
+    "kicker": "Our Podcast",
+    "title": "Sparkle in Style Podcast",
+    "description": "Real stories from our students about growth, self-confidence and chasing their dreams.",
+    "latest": "Latest Episode",
+    "featuredCta": "Watch this student's story on YouTube.",
+    "allEpisodes": "All Episodes",
+    "watch": "Watch"
+  },
+"about": {
+  "kicker": "About Sparkle in Style",
+  "titleLine1": "More than a Salon.",
+  "titleLine2Prefix": "A",
+  "titleLine2Emphasis": "Training Company",
+"paragraph1": "Sparkle in Style is a certified training company that provides high-quality vocational education and social coaching for young people and adults. Students develop essential workplace skills, work on their personal growth, and receive guidance toward employment and active participation in society.",
+
+  "spaceLabel": "Our space:",
+  "spaceText": "calm, professional, and designed for both education and client experience.",
+  "features": [
+    "Experienced Instructors",
+    "Practice-Oriented",
+    "Internship & Portfolio",
+    "Inclusive Community"
+  ],
+  "imageAlt": "Sparkle in Style interior"
+}
+
+
+
 }

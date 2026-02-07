@@ -62,14 +62,20 @@ const Hero: React.FC = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <button
-              onClick={() => scrollToId("academy")}
-              className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5 text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-neutral-900 shadow-md transition hover:bg-gold-400 hover:shadow-lg"
-              type="button"
-            >
-              {t("hero.ctaPrograms")}
-              <CalendarClock className="h-4 w-4" />
-            </button>
+<button
+  onClick={() => {
+    window.history.replaceState(null, "", "/?tab=academy");
+    scrollToId("services");
+  }}
+  className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-8 py-3.5
+             text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase
+             text-neutral-900 shadow-md transition hover:bg-gold-400 hover:shadow-lg"
+  type="button"
+>
+  {t("hero.ctaPrograms")}
+  <CalendarClock className="h-4 w-4" />
+</button>
+
 
             <button
               onClick={() => scrollToId("contact")}
