@@ -58,9 +58,7 @@ const Footer: React.FC = () => {
                 <p>Sparkle in Style</p>
                 <p>Zuidlarenstraat 57 / Unit 2.16</p>
                 <p>2545 VP Den Haag</p>
-                <p className="mt-1 text-xs text-neutral-500">
-                  Beauty Salon: Speelzijde 8, 2543 XZ Den Haag
-                </p>
+
               </div>
             </div>
 
