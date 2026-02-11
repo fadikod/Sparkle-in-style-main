@@ -85,14 +85,16 @@ const Team: React.FC = () => {
         {/* ================= TEAM INTRO ================= */}
         <div className="text-center mb-8">
           <span className="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">
-            {t("team.experts.kicker")}
+{t("team.kicker")}
+
           </span>
 
           <h2 className="font-display text-3xl md:text-4xl text-neutral-900 mt-3 mb-3">
-            {t("team.experts.titlePrefix")}{" "}
-            <span className="italic font-serif text-gold-600">
-              {t("team.experts.titleEmphasis")}
-            </span>
+{t("team.titlePrefix")}{" "}
+<span className="text-gold-600 italic">
+  {t("team.titleEmphasis")}
+</span>
+
           </h2>
 
           <div className="h-px w-20 mx-auto bg-gradient-to-r from-transparent via-gold-500 to-transparent" />

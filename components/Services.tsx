@@ -22,6 +22,7 @@ import businessImg from "../assets/future/ondernemen.jpg";
 /* ================= SALON MODAL IMAGES ================= */
 import salonHairImg from "../assets/hair.png";
 import salonNailsImg from "../assets/nails.png";
+import salonLashImg from "../assets/lash.png";
 
 /* ================= DATA ================= */
 const servicesData: ServiceItem[] = [
@@ -123,8 +124,7 @@ const academyImages: Record<string, string> = {
   a6: businessImg,
 };
 
-const imagePosition = (id: string) =>
-  id === "a6" ? "object-top" : "object-center";
+const imagePosition = (id: string) => (id === "a6" ? "object-top" : "object-center");
 
 /* ================= COMPONENT ================= */
 const Services: React.FC = () => {
@@ -138,14 +138,23 @@ const Services: React.FC = () => {
     return params.get("tab") === "salon" ? "salon" : "academy";
   };
 
-  const [activeTab, setActiveTab] = useState<"academy" | "salon">(
-    getTabFromQuery()
-  );
+  /* ===== STATE ===== */
+  const [activeTab, setActiveTab] = useState<"academy" | "salon">(getTabFromQuery());
   const [academyPage, setAcademyPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(2);
+
   const [showSalonModal, setShowSalonModal] = useState(false);
   const [showAcademyModal, setShowAcademyModal] = useState(false);
 
+  /* ===== SALON SLIDER ===== */
+  const salonImages = useMemo(() => [salonHairImg, salonNailsImg, salonLashImg], []);
+  const [salonIndex, setSalonIndex] = useState(0);
+
+  const prevSalonImage = () =>
+    setSalonIndex((i) => (i === 0 ? salonImages.length - 1 : i - 1));
+
+  const nextSalonImage = () =>
+    setSalonIndex((i) => (i === salonImages.length - 1 ? 0 : i + 1));
 
   /* ===== SYNC TAB ===== */
   useEffect(() => {
@@ -161,13 +170,18 @@ const Services: React.FC = () => {
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  /* ===== RESET SALON SLIDER WHEN OPENING MODAL ===== */
+  useEffect(() => {
+    if (showSalonModal) setSalonIndex(0);
+  }, [showSalonModal]);
+
+  /* ===== DATA DERIVED ===== */
   const academyPrograms = useMemo(
     () => servicesData.filter((s) => s.category === "academy"),
     []
   );
 
-  const maxAcademyPage =
-    Math.ceil(academyPrograms.length / itemsPerPage) - 1;
+  const maxAcademyPage = Math.ceil(academyPrograms.length / itemsPerPage) - 1;
 
   const handlePrevAcademy = () =>
     setAcademyPage((p) => (p > 0 ? p - 1 : maxAcademyPage));
@@ -186,7 +200,7 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="relative pt-6 pb-12">
       <div className="container mx-auto px-6">
-        {/* HEADER */}
+        {/* ================= HEADER ================= */}
         <div className="text-center mb-10">
           <h2 className="font-display text-4xl md:text-5xl">
             {t("services.titlePrefix")}{" "}
@@ -213,200 +227,207 @@ const Services: React.FC = () => {
         </div>
 
         {/* ================= ACADEMY ================= */}
-{activeTab === "academy" && (
-  <>
-    <div className="relative max-w-5xl mx-auto">
-      <button
-        onClick={handlePrevAcademy}
-        className="absolute -left-6 top-1/2 -translate-y-1/2 z-10"
-      >
-        <ChevronLeft />
-      </button>
+        {activeTab === "academy" && (
+          <>
+            <div className="relative max-w-5xl mx-auto">
+              <button
+                onClick={handlePrevAcademy}
+                className="absolute -left-6 top-1/2 -translate-y-1/2 z-10"
+                aria-label={t("services.academy.ariaPrev")}
+              >
+                <ChevronLeft />
+              </button>
 
-      <button
-        onClick={handleNextAcademy}
-        className="absolute -right-6 top-1/2 -translate-y-1/2 z-10"
-      >
-        <ChevronRight />
-      </button>
+              <button
+                onClick={handleNextAcademy}
+                className="absolute -right-6 top-1/2 -translate-y-1/2 z-10"
+                aria-label={t("services.academy.ariaNext")}
+              >
+                <ChevronRight />
+              </button>
 
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${academyPage * 100}%)` }}
-        >
-          {academyPrograms.map((program) => (
-            <div
-              key={program.id}
-              className="w-full md:w-1/2 flex-shrink-0 px-4"
-            >
-              <article className="bg-white rounded-3xl overflow-hidden shadow-md">
-                <div className="h-[260px] overflow-hidden">
-                  <img
-                    src={academyImages[program.id]}
-                    alt={t(program.title)}
-                    className={`w-full h-full object-cover ${imagePosition(
-                      program.id
-                    )}`}
-                  />
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500"
+                  style={{ transform: `translateX(-${academyPage * 100}%)` }}
+                >
+                  {academyPrograms.map((program) => (
+                    <div
+                      key={program.id}
+                      className="w-full md:w-1/2 flex-shrink-0 px-4"
+                    >
+                      <article className="bg-white rounded-3xl overflow-hidden shadow-md">
+                        <div className="h-[260px] overflow-hidden">
+                          <img
+                            src={academyImages[program.id]}
+                            alt={t(program.title)}
+                            className={`w-full h-full object-cover ${imagePosition(
+                              program.id
+                            )}`}
+                          />
+                        </div>
+
+                        <div className="p-6">
+                          <h3 className="font-display text-xl mb-2">
+                            {t(program.title)}
+                          </h3>
+                          <p className="text-sm text-neutral-600 mb-3">
+                            {t(program.description)}
+                          </p>
+                          <span className="text-[11px] uppercase tracking-wide text-gold-600">
+                            {program.duration}
+                          </span>
+                        </div>
+                      </article>
+                    </div>
+                  ))}
                 </div>
-
-                <div className="p-6">
-                  <h3 className="font-display text-xl mb-2">
-                    {t(program.title)}
-                  </h3>
-                  <p className="text-sm text-neutral-600 mb-3">
-                    {t(program.description)}
-                  </p>
-                  <span className="text-[11px] uppercase tracking-wide text-gold-600">
-                    {program.duration}
-                  </span>
-                </div>
-              </article>
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
 
-    {/* ===== JOB COACHING BUTTON ===== */}
-    <div className="flex justify-center mt-10">
-      <button
-        type="button"
-        onClick={() => setShowAcademyModal(true)}
-        className="inline-flex items-center rounded-full
-                   border border-gold-300 bg-gold-50/70
-                   px-6 py-2 text-[11px] uppercase tracking-[0.2em]
-                   text-gold-800 hover:bg-gold-100 transition"
-      >
-        {t("services.academy.jobCoachingButton")}
-      </button>
-    </div>
-  </>
-)}
-
+            {/* ===== JOB COACHING BUTTON ===== */}
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setShowAcademyModal(true)}
+                className="rounded-full border border-gold-300 bg-gold-50/70 px-6 py-2 text-[11px] uppercase tracking-[0.2em] text-gold-800 hover:bg-gold-100 transition"
+              >
+                {t("services.academy.jobCoachingButton")}
+              </button>
+            </div>
+          </>
+        )}
 
         {/* ================= SALON ================= */}
-{/* ================= SALON ================= */}
-{activeTab === "salon" && (
-  <>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {(["hair", "nails", "makeup"] as const).map((cat) => (
-        <div key={cat}>
-          <div className="flex items-center gap-2 mb-4">
-            {cat === "hair" && <Scissors />}
-            {cat === "nails" && <Palette />}
-            {cat === "makeup" && <Sparkles />}
-            <h3 className="font-display text-lg">
-              {catLabel(cat)}
-            </h3>
-          </div>
-
-          <div className="space-y-3">
-            {servicesData
-              .filter((s) => s.category === cat)
-              .map((service) => (
-                <div key={service.id}>
-                  <div className="flex justify-between">
-                    <span>{t(service.title)}</span>
-                    <span className="font-serif">
-                      {service.price}
-                    </span>
+        {activeTab === "salon" && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {(["hair", "nails", "makeup"] as const).map((cat) => (
+                <div key={cat}>
+                  <div className="flex items-center gap-2 mb-4">
+                    {cat === "hair" && <Scissors />}
+                    {cat === "nails" && <Palette />}
+                    {cat === "makeup" && <Sparkles />}
+                    <h3 className="font-display text-lg">{catLabel(cat)}</h3>
                   </div>
-                  <p className="text-xs text-neutral-500">
-                    {t(service.description)}
+
+                  <div className="space-y-3">
+                    {servicesData
+                      .filter((s) => s.category === cat)
+                      .map((service) => (
+                        <div key={service.id}>
+                          <div className="flex justify-between">
+                            <span>{t(service.title)}</span>
+                            <span className="font-serif">{service.price}</span>
+                          </div>
+                          <p className="text-xs text-neutral-500">
+                            {t(service.description)}
+                          </p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* ===== VIEW FULL SALON MENU BUTTON ===== */}
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setShowSalonModal(true)}
+                className="rounded-full border border-gold-300 bg-gold-50/70 px-6 py-2 text-[11px] uppercase tracking-[0.2em] text-gold-800 hover:bg-gold-100 transition"
+              >
+                {t("buttons.viewFullSalonMenu")}
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* ================= SALON MODAL ================= */}
+      {showSalonModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
+<div className="relative bg-white rounded-3xl max-w-4xl w-full p-6">
+
+<button
+  type="button"
+  onClick={() => setShowSalonModal(false)}
+  className="absolute top-5 right-5 z-50 bg-white rounded-full p-2 shadow"
+  aria-label="Close"
+>
+  <X />
+</button>
+
+
+<div className="relative max-w-[900px] mx-auto">
+
+              {/* LEFT ARROW */}
+              <button
+                onClick={prevSalonImage}
+                className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow"
+                aria-label="Previous image"
+              >
+                <ChevronLeft />
+              </button>
+
+              {/* IMAGE */}
+<img
+  src={salonImages[salonIndex]}
+  alt="Salon service menu"
+  className="rounded-2xl object-contain max-h-[70vh] w-full mx-auto"
+/>
+
+
+              {/* RIGHT ARROW */}
+              <button
+                onClick={nextSalonImage}
+                className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow"
+                aria-label="Next image"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ================= ACADEMY MODAL ================= */}
+      {showAcademyModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
+          <div className="relative bg-white rounded-3xl max-w-4xl w-full p-8">
+            <button
+              onClick={() => setShowAcademyModal(false)}
+              className="absolute top-5 right-5"
+              aria-label="Close"
+            >
+              <X />
+            </button>
+
+            <div className="text-center mb-8">
+              <h3 className="font-display text-3xl md:text-4xl">
+                {t("services.academy.support.title")}
+              </h3>
+              <p className="mt-3 text-sm text-neutral-600 max-w-2xl mx-auto">
+                {t("services.academy.support.subtitle")}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {["coaching", "teaching", "work"].map((key) => (
+                <div
+                  key={key}
+                  className="rounded-3xl bg-neutral-50 border border-neutral-200 p-6 text-center"
+                >
+                  <h4 className="font-display text-lg mb-3">
+                    {t(`services.academy.support.${key}.title`)}
+                  </h4>
+                  <p className="text-sm text-neutral-600">
+                    {t(`services.academy.support.${key}.desc`)}
                   </p>
                 </div>
               ))}
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-
-    {/* ===== VIEW FULL SALON MENU BUTTON ===== */}
-    <div className="flex justify-center mt-10">
-      <button
-        type="button"
-        onClick={() => setShowSalonModal(true)}
-        className="inline-flex items-center rounded-full
-                   border border-gold-300 bg-gold-50/70
-                   px-6 py-2 text-[11px] uppercase tracking-[0.2em]
-                   text-gold-800 hover:bg-gold-100 transition"
-      >
-        {t("buttons.viewFullSalonMenu")}
-      </button>
-    </div>
-  </>
-)}
-
-      </div>
-      {/* ================= SALON MODAL ================= */}
-{showSalonModal && (
-  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
-    <div className="relative bg-white rounded-3xl max-w-6xl w-full p-8">
-      <button
-        onClick={() => setShowSalonModal(false)}
-        className="absolute top-5 right-5"
-      >
-        <X />
-      </button>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <img
-          src={salonHairImg}
-          alt="Hair"
-          className="rounded-2xl object-cover h-[480px] w-full"
-        />
-        <img
-          src={salonNailsImg}
-          alt="Nails"
-          className="rounded-2xl object-cover h-[480px] w-full"
-        />
-      </div>
-    </div>
-  </div>
-)}
-{/* ================= ACADEMY JOB COACHING MODAL ================= */}
-{showAcademyModal && (
-  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
-    <div className="relative bg-white rounded-3xl max-w-4xl w-full p-8">
-      <button
-        onClick={() => setShowAcademyModal(false)}
-        className="absolute top-5 right-5"
-      >
-        <X />
-      </button>
-
-      <div className="text-center mb-8">
-        <h3 className="font-display text-3xl md:text-4xl text-neutral-900">
-          {t("services.academy.support.title")}
-        </h3>
-
-        <p className="mt-3 text-sm text-neutral-600 max-w-2xl mx-auto">
-          {t("services.academy.support.subtitle")}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {["coaching", "teaching", "work"].map((key) => (
-          <div
-            key={key}
-            className="rounded-3xl bg-neutral-50 border border-neutral-200 p-6 text-center"
-          >
-            <h4 className="font-display text-lg mb-3">
-              {t(`services.academy.support.${key}.title`)}
-            </h4>
-
-            <p className="text-sm text-neutral-600">
-              {t(`services.academy.support.${key}.desc`)}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
     </section>
   );
 };
